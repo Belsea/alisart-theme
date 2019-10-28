@@ -7,8 +7,6 @@
  License URI: LICENSE
  Text Domain: alisart-theme
 */
-/*  V A R I A B L E S
-    ========================================================================== */
 /*  N O R M A L I Z E 
 	========================================================================== */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -420,7 +418,6 @@ body {
 }
 
 .sub-header {
-  /* Category & Previous/Next post */
   font-weight: 200;
   font-variant-caps: all-small-caps;
 }
@@ -503,11 +500,104 @@ figure img,
   display: inline-block;
 }
 
-/*  
-    ==========================================================================
-    H E A D E R . P H P 
-    ========================================================================== 
-*/
+.index__header {
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 15vh;
+  position: relative;
+  text-align: center;
+  width: 91vw;
+  z-index: 3;
+}
+
+@media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
+  .index__header {
+    font-size: 1.13em;
+  }
+}
+
+@media all and (orientation: portrait) and (min-width: 440px) {
+  .index__header {
+    width: calc(300px + 40vw);
+  }
+}
+
+@media all and (orientation: landscape) {
+  .index__header {
+    margin-top: 18vh;
+    width: calc(200px + 30vw);
+  }
+}
+
+@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
+  .index__header {
+    width: calc(300px + 30vw);
+  }
+}
+
+@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
+  .index__header {
+    width: 45vw;
+  }
+}
+
+.index__header a {
+  color: black;
+}
+
+.index__header__logo {
+  width: 100%;
+}
+
+.index__header__socials {
+  margin: 3vh 0 5vh 0;
+}
+
+@media all and (orientation: landscape) {
+  .index__header__socials {
+    margin: 4.5vh 0 8vh 0;
+  }
+}
+
+.index__header__socials li {
+  display: inline;
+  margin: 0 2.2vw;
+}
+
+@media all and (orientation: landscape) {
+  .index__header__socials li {
+    margin: 0 1vw;
+  }
+}
+
+.index__header__socials a {
+  font-size: 1.11em;
+  padding: .12em .45em;
+  position: relative;
+}
+
+.index__header__socials a:hover {
+  color: #b76c98;
+}
+
+.index__header__pages li {
+  display: inline;
+  margin: 0 2.1vw;
+}
+
+.index__header__pages a {
+  font-size: 1em;
+  padding: .29em 0;
+  position: relative;
+  /* needed to correctly position the before pseudo-element */
+}
+
+@media all and (orientation: landscape) {
+  .index__header__pages a {
+    padding: .3em 0;
+  }
+}
+
 .popup-nav {
   background: #92105F;
   position: fixed;
@@ -730,6 +820,44 @@ figure img,
   }
 }
 
+.popup-nav__menu-landscape {
+  display: none;
+}
+
+@media all and (orientation: landscape) {
+  .popup-nav__menu-landscape {
+    display: block;
+  }
+}
+
+.popup-nav__menu-portrait {
+  display: block;
+}
+
+@media all and (orientation: landscape) {
+  .popup-nav__menu-portrait {
+    display: none;
+  }
+}
+
+.popup-nav__menu-portrait ul.sub-menu {
+  text-align: left;
+  margin-left: .9em;
+  font-size: .84em;
+  font-weight: 300;
+}
+
+.popup-nav__menu-portrait ul.sub-menu a {
+  padding: .48em 0;
+}
+
+.popup-nav__menu-portrait ul.sub-menu li {
+  display: block;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  padding-left: 1em;
+  line-height: 2.6;
+}
+
 .pages-nav {
   text-align: left;
   display: block;
@@ -858,153 +986,6 @@ figure img,
   }
 }
 
-/*  
-    ==========================================================================
-    H E A D E R - I N D E X . P H P 
-    ========================================================================== 
-*/
-.index__header {
-  position: relative;
-  text-align: center;
-  /* per il logo a meno del 100% */
-  z-index: 3;
-  margin: 0 auto;
-  margin-top: 15vh;
-  font-size: 1rem;
-  width: 91vw;
-}
-
-@media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
-  .index__header {
-    font-size: 1.13em;
-  }
-}
-
-@media all and (orientation: portrait) and (min-width: 440px) {
-  .index__header {
-    width: calc(300px + 40vw);
-  }
-}
-
-@media all and (orientation: landscape) {
-  .index__header {
-    margin-top: 18vh;
-    width: calc(200px + 30vw);
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
-  .index__header {
-    width: calc(300px + 30vw);
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
-  .index__header {
-    width: 45vw;
-  }
-}
-
-.index__header a {
-  color: black;
-}
-
-.index__header-logo {
-  width: 100%;
-}
-
-#header-pages-nav a {
-  position: relative;
-  /* needed to correctly position the before pseudo-element */
-  font-size: 1em;
-  padding: .29em 0;
-}
-
-@media all and (orientation: landscape) {
-  #header-pages-nav a {
-    padding: .3em 0;
-  }
-}
-
-#header-pages-nav li {
-  display: inline;
-  margin: 0 2.1vw;
-}
-
-#header-social-links {
-  margin: 3vh 0 5vh 0;
-}
-
-@media all and (orientation: landscape) {
-  #header-social-links {
-    margin: 4.5vh 0 8vh 0;
-  }
-}
-
-#header-social-links a {
-  position: relative;
-  font-size: 1.11em;
-  padding: .12em .45em;
-}
-
-#header-social-links a:hover {
-  color: #b76c98;
-}
-
-#header-social-links li {
-  display: inline;
-  margin: 0 2.2vw;
-}
-
-@media all and (orientation: landscape) {
-  #header-social-links li {
-    margin: 0 1vw;
-  }
-}
-
-.popup-nav__menu-landscape {
-  display: none;
-}
-
-@media all and (orientation: landscape) {
-  .popup-nav__menu-landscape {
-    display: block;
-  }
-}
-
-.popup-nav__menu-portrait {
-  display: block;
-}
-
-@media all and (orientation: landscape) {
-  .popup-nav__menu-portrait {
-    display: none;
-  }
-}
-
-.popup-nav__menu-portrait ul.sub-menu {
-  text-align: left;
-  margin-left: .9em;
-  font-size: .84em;
-  font-weight: 300;
-}
-
-.popup-nav__menu-portrait ul.sub-menu a {
-  padding: .48em 0;
-}
-
-.popup-nav__menu-portrait ul.sub-menu li {
-  display: block;
-  border-left: 1px solid rgba(255, 255, 255, 0.6);
-  padding-left: 1em;
-  line-height: 2.6;
-}
-
-/*
-    ==========================================================================
-    I N D E X . P H P 
-    ==========================================================================
-*/
 .index-container {
   position: relative;
   text-align: center;
@@ -1203,11 +1184,6 @@ figure img,
   display: block;
 }
 
-/*
-    ==========================================================================
-    F 0 0 T E R . P H P 
-    ==========================================================================
-*/
 footer {
   background: #393939;
   font-weight: 300;
@@ -1333,11 +1309,6 @@ footer {
   }
 }
 
-/*
-    ==========================================================================
-    S I N G U L A R S
-    ==========================================================================
-*/
 body.page, body.single, body.error404 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1591,11 +1562,6 @@ body.page footer, body.single footer, body.error404 footer {
   margin-bottom: 5vh;
 }
 
-/*
-    ==========================================================================
-    S I N G L E . P H P 
-    ==========================================================================
-*/
 .single .singular-container input.hidden-cat {
   display: none;
 }
@@ -1726,11 +1692,6 @@ body.page footer, body.single footer, body.error404 footer {
   }
 }
 
-/*
-    ==========================================================================
-    P A G E . P H P   &   4 0 4 . P H P
-    ==========================================================================
-*/
 .page .singular-container {
   background: rgba(255, 255, 255, 0.5);
   -webkit-box-sizing: border-box;
@@ -2003,11 +1964,6 @@ body.page footer, body.single footer, body.error404 footer {
   font-size: .8em;
 }
 
-/*
-    ==========================================================================
-    M A S O N R Y   G R I D
-    ==========================================================================
-*/
 /* 
  * I N D E X   S I Z E:
  * 2 columns for mobile in portrait orientation
@@ -2123,12 +2079,7 @@ body.page footer, body.single footer, body.error404 footer {
   }
 }
 
-/*
-    ==========================================================================
-    B E F O R E   A N I M A T I O N S
-    ==========================================================================
-*/
-#header-pages-nav a:before,
+.index__header__pages a:before,
 .pages-nav a:before,
 #categories-nav a:before,
 .popup-nav__menu-portrait ul.sub-menu a:before {
@@ -2144,31 +2095,31 @@ body.page footer, body.single footer, body.error404 footer {
   transition: opacity .1s ease-in, width .2s ease-in;
 }
 
-#header-pages-nav a:hover:before,
+.index__header__pages a:hover:before,
 .pages-nav a:hover:before,
 #categories-nav a:hover:before,
 .popup-nav__menu-portrait ul.sub-menu a:hover:before {
   opacity: 1;
 }
 
-#header-pages-nav a:before,
+.index__header__pages a:before,
 .pages-nav a:before {
   height: 60%;
   left: -6%;
 }
 
-#header-pages-nav a:hover:before,
+.index__header__pages a:hover:before,
 .pages-nav a:hover:before {
   width: 107%;
 }
 
-#header-pages-nav li.current-menu-item > a:before,
+.index__header__pages li.current-menu-item > a:before,
 .pages-nav li.current-menu-item > a:before {
   width: 107%;
   opacity: 1;
 }
 
-#header-pages-nav a:before {
+.index__header__pages a:before {
   background: rgba(221, 182, 203, 0.88);
   bottom: 15%;
 }
@@ -2242,11 +2193,6 @@ body.page footer, body.single footer, body.error404 footer {
   width: 106%;
 }
 
-/*
-    ==========================================================================
-    S P I N N E R
-    ==========================================================================
-*/
 @-webkit-keyframes lds-double-ring {
   0% {
     -webkit-transform: rotate(0);
@@ -2257,6 +2203,7 @@ body.page footer, body.single footer, body.error404 footer {
             transform: rotate(360deg);
   }
 }
+
 @keyframes lds-double-ring {
   0% {
     -webkit-transform: rotate(0);
@@ -2333,11 +2280,6 @@ body.page footer, body.single footer, body.error404 footer {
           transform: translate(-1em, -1em) scale(0.25) translate(1em, 1em);
 }
 
-/*
-    ==========================================================================
-    I M A G E S   H O V E R
-    ==========================================================================
-*/
 figure.portfolio {
   background-color: #92105F;
 }

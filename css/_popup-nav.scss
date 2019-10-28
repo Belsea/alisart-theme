@@ -162,6 +162,34 @@
 }
 
 
+.popup-nav__menu-landscape { display: none;
+
+    @media #{ $landscape } { display: block; }
+}
+.popup-nav__menu-portrait { display: block;
+
+    @media #{ $landscape } { display: none; }
+}
+
+.popup-nav__menu-portrait {
+
+    ul.sub-menu {
+        text-align: left;
+        margin-left: .9em;
+        font-size: .84em;
+        font-weight: 300;
+
+        a { padding: .48em 0; }
+
+        li { 
+            display: block;
+            border-left: 1px solid rgba(255, 255, 255, 0.6);
+            padding-left: 1em;
+            line-height: 2.6;
+        }
+
+    }
+}
 
 .pages-nav {   
     text-align: left;

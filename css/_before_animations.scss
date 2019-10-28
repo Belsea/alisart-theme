@@ -1,4 +1,4 @@
-#header-pages-nav,
+.index__header__pages,
 .pages-nav,
 #categories-nav,
 .popup-nav__menu-portrait ul.sub-menu {
@@ -20,7 +20,7 @@
 
 
 
-#header-pages-nav,
+.index__header__pages,
 .pages-nav {
 
     a {
@@ -38,7 +38,7 @@
         }
     }
 }
-#header-pages-nav { 
+.index__header__pages { 
     a {
         &:before { 
             background: $primary-color--muted2; 

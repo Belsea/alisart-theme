@@ -21,14 +21,14 @@
         <?php
         wp_nav_menu(array(
             'theme_location' => 'index-header_socials',
-            'menu_id'       => 'header-social-links',
+            'menu_class'       => 'index__header__socials m-0 p-0',
             'container'     => ''
         ));
         ?>
         <?php
         wp_nav_menu(array(
             'theme_location' => 'index-header_pages',
-            'menu_id'       => 'header-pages-nav',
+            'menu_class'       => 'index__header__pages m-0 p-0',
             'container'     => ''
         ));
         ?>
