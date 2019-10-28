@@ -1,0 +1,192 @@
+.page .singular-container{
+
+    background: rgba($color: #FFF, $alpha: .5);    
+    box-sizing: border-box;
+    
+    h1 {
+        width: auto;
+        z-index: 2;
+
+        &:before {
+            content: "";
+            position: absolute;            
+            width: 104%;
+            height: 67%;            
+            left: -3%;
+            bottom: 0%;
+            background: $primary-color--muted2;
+            z-index: -1;
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+    }
+    
+    p, ul {
+        font-size: .6em;
+    }
+
+    
+
+    /* ABOUT PAGE */
+    #bio {
+        float: right;
+        width: 100%;
+        @media #{ $portrait--440-min-w }, #{ $landscape } { width: 66%; }
+        line-height: 1.4;
+
+        .bio-img {          
+            justify-items: end;
+            margin-right: -.3em;
+            float: right; // bring the paragraphs nearer
+            @media #{ $portrait--440-min-w } { 
+                width: 10.8em;
+                margin-right: -.4em; 
+            }
+            @media #{ $landscape } { 
+                justify-items: center;
+                margin-right: .3em;
+            }
+            @media #{ $landscape--440-min-h }, #{ $big-1336-min-h } { margin-right: -.1em }
+        }
+
+        .wp-block-media-text .wp-block-media-text__content {
+            padding: 0 26% 0 0;
+            @media #{ $portrait--440-min-w } { padding: 0 24% 0 0 }
+            @media #{ $big-1336-min-h } { padding: 0 28% 0 0 }
+            @media #{ $landscape } { padding: 0 11% 0 0 }
+            @media #{ $landscape--440-min-h } { padding: 0 0 0 4%; }
+            @media #{ $big-1336-min-h } { padding: 0 0 0 8% }
+            @media #{ $desktop } { padding: 0 7% 0 0 }
+        }
+
+        .bio-intro { 
+            margin: .6em 0 0 0;
+            font-size: 1.15em;
+            line-height: 1.5;
+        }
+
+        img[data-sizes="auto"] { 
+            min-width: 0;
+            width: 7em;
+            @media #{ $portrait--440-min-w }, #{ $landscape--439-max-h } { width: 6.7em }
+        }
+
+        #bio-eng, #bio-ita { 
+            display: block; 
+            clear: both;
+            padding-top: .1em;
+
+            p {
+                margin: .6em 0;
+                text-align: right;
+            }
+
+            &.hidden { display: none; }
+        }
+    }
+
+    .clients-list { 
+        float: left;
+        width: 100%;
+        margin-top: 3vh;
+        @media #{ $portrait--440-min-w }, #{ $landscape } { 
+            width: 30%; 
+            margin-top: -5vh;
+        }
+        position: relative;
+        font-size: .9em;
+        line-height: 1.7;
+
+        h2 { 
+            font-size: 1em; 
+            margin-bottom: -.5em;
+        }
+
+        ul { padding: 0 }
+    }
+    /* /ABOUT PAGE */
+
+
+
+    /* CONTACTS PAGE */
+    p  a {
+        font-family: 'Playfair Display', serif;
+        color: $primary-color;
+        font-weight: 700;
+        font-size: 1.1em;
+        padding-left: .15em;
+
+        &:hover { color: $primary-color--muted; }
+
+        &[href="https://www.instagram.com/alisartbeauty"] { padding-right: .15em }
+    }
+
+    form.wpcf7-form {
+        margin-top: 2.2em;
+        font-size: .6em !important;
+
+        * { border: none !important; }
+
+        p { 
+            font-size: 1em;
+            margin: 1.2em 0;
+        }
+
+        label, input::placeholder, textarea::placeholder {
+            font-weight: 300 !important;
+        }
+
+        input:not([type="submit"]) { 
+            width: 70%;
+            @media #{ $portrait--439-max-w } { width: 100% }
+        }
+
+        button, input[type="submit"] {
+            color: white;
+            background: $primary-color !important;
+            padding: .5em .7em;
+
+            &:hover {
+                background: $primary-color--muted !important;
+            }
+        }
+
+        input, textarea {                
+            &:focus { outline: auto deepskyblue }     
+            box-sizing: border-box;
+            position: relative;
+            top: .1em;
+            padding: .5em .7em .4em .7em;
+        }
+
+        textarea { 
+            width: 100%;
+            top: .2em;
+            height: 6em;
+        }
+
+        .wpcf7-not-valid-tip { 
+            margin-top: .4em; 
+            font-size: .8em;
+            font-weight: 300;
+        }
+    }
+    /* /CONTACTS PAGE */
+}
+
+
+
+// 404 PAGE
+#nf404-container {
+    text-align: center;
+    font-size: .85em;
+
+    h1 {
+        text-align: center;
+        margin: 1rem 0;
+        color: $primary-color;
+    }
+
+    p { font-size: .8em; }
+}
+

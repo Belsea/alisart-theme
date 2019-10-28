@@ -1,0 +1,115 @@
+#header-pages-nav,
+.pages-nav,
+#categories-nav,
+.popup-nav__menu-portrait ul.sub-menu {
+
+    a {
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            z-index: -1;
+            border-top-left-radius: 100px; /* seems to much but it suits all screens */
+            border-bottom-right-radius: 100px;
+            opacity: 0; 
+            transition: opacity .1s ease-in, width .2s ease-in;
+        }
+        &:hover:before { opacity: 1; }
+    }
+}
+
+
+
+#header-pages-nav,
+.pages-nav {
+
+    a {
+        &:before {
+            height: 60%;
+            left: -6%;  
+        }
+        &:hover:before { width: 107%; }
+    }
+
+    li {
+        &.current-menu-item > a:before {
+            width: 107%;
+            opacity: 1;
+        }
+    }
+}
+#header-pages-nav { 
+    a {
+        &:before { 
+            background: $primary-color--muted2; 
+            bottom: 15%;
+        }
+    } 
+}
+.pages-nav { 
+    a {
+        &:before { 
+            background: $white--transparency;
+            bottom: 16%;            
+            @media #{ $landscape } { bottom: 15%; }
+        }
+    } 
+}
+
+
+
+#categories-nav,
+.popup-nav__menu-portrait ul.sub-menu {
+
+    a {
+        &:before {
+            height: 51%;
+            right: -6%;
+
+            left: unset; // assure transitions start from right
+        }
+    }
+
+    li {
+        &.current-cat a:before,
+        &.current-menu-item a:before {
+            opacity: 1;
+        }
+
+        // for the All category
+        &.cat-item-1 a:before,
+        &:first-of-type a:before { right: -25%; }
+
+        &.cat-item-1.current-cat a:before,
+        &.cat-item-1 a:hover:before,
+        &:first-of-type.current-menu-item a:before,
+        &:first-of-type a:hover:before { width: 120%; }
+    }
+}
+#categories-nav {
+
+    a {
+        &:before {
+            bottom: 20%;
+            background: $gray--lighter2;
+        }
+        &:hover:before { width: 105%; }
+    }
+
+    li {
+        &.current-cat a:before { width: 105%; }
+    }
+}
+.popup-nav__menu-portrait ul.sub-menu {
+
+    a {
+        &:before {
+            bottom: 19%;
+            background: $white--transparency;
+        }
+        &:hover:before { width: 106%; }
+    }
+    li {
+        &.current-menu-item a:before { width: 106%; }
+    }
+}

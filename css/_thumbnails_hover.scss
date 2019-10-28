@@ -1,0 +1,92 @@
+figure.portfolio {     
+    background-color: $primary-color;
+
+    &:hover { // TRIGGER ALL THE HOVERS
+        img { opacity: 0.4 }
+
+        figcaption {
+            .post-meta {
+                h2, .meta-cat-box, h3 { opacity: 1; }
+
+                h2 { 
+                    transform: scale(1); 
+                    transition: opacity .4s, transform .4s;
+                }
+                .meta-cat-box { 
+                    transform: scaleX(1);
+                    transition: opacity .3s .3s, transform .3s .3s ease-out;
+                }
+                h3 {
+                    transform: translateY(0);
+                    transition: opacity .2s .6s, transform .2s .6s;
+                }
+            }
+        }
+    }
+
+    img {  
+        width: 100%;
+        height: auto;        
+        opacity: 1;
+        transition: opacity .1s;
+    }
+    img[data-sizes="auto"] { 
+        display: block; 
+        width: 100%; 
+    }
+}
+
+figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    color: white;
+    width: 100%;
+    height: 100%;
+
+    display: inline-flex;
+    align-items: center;
+
+    .post-meta {
+        position: relative;
+        width: 100%;
+        padding: 0 10%;
+
+        h2, .meta-cat-box, h3 { transition: opacity .1s, transform .1s; } // CLOSING
+
+        h2 {
+            position: relative;
+            font-size: .72em;
+            @media #{ $landscape--439-max-h } { font-size: .62em; }
+            margin-bottom: .65em;            
+            opacity: 0;
+            transform: scale(0.6);
+        }
+
+        .meta-cat-box {
+            border-top: solid 1px white;
+            margin: 0 .15em;
+            padding-top: .4em;
+            @media #{ $landscape--439-max-h } { margin-bottom: 2.1vh}
+            opacity: 0;
+            transform: scaleX(0);
+        }
+    
+        h3 {
+            font-size: .6em;
+            @media #{ $landscape--439-max-h } { font-size: .52em; }
+            opacity: 0;
+            transform: translateY(35%);
+        }
+    }
+    
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+    }
+}

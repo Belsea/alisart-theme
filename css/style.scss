@@ -1,0 +1,226 @@
+/*
+ Theme Name: Alisart Theme
+ Author: Marina Bellacicco
+ Description: Custom theme for AlisartBeauty\'s portfolio
+ Version: 1.2.0
+ License: GNU General Public License v2 or later
+ License URI: LICENSE
+ Text Domain: alisart-theme
+*/
+
+/*  V A R I A B L E S
+    ========================================================================== */
+$primary-color:         #92105F;
+$primary-color--muted:  #BE7EA5;
+$primary-color--muted:  hsla(325, 34%, 57%, 1);
+$primary-color--muted2: hsla(328, 36%, 79%, .88); // #e0bdd0
+$white--transparency:   rgba(255, 255, 255, 0.18);
+$gray:                  #393939;
+$gray--lighter:         #B1ACAF;
+$gray--lighter2:        #D0D0D0;
+$gray--lighter3:        #DFDFDF;
+
+
+$portrait--439-max-w:   "all and (orientation: portrait) and (max-width: 439px)";
+$portrait--440-min-w:   "all and (orientation: portrait) and (min-width: 440px)";
+
+$landscape:             "all and (orientation: landscape)";
+$landscape--439-max-h:  "all and (orientation: landscape) and (max-height: 439px)";
+$landscape--440-min-h:  "all and (orientation: landscape) and (min-height: 440px)";
+$landscape--1440-min-w: "all and (orientation: landscape) and (min-width: 1440px)";
+
+$big-1336-min-h:        "all and (min-height: 1336px)";
+$big-2160-min-h:        "all and (min-height: 2160px)";
+
+$desktop:  "all and (pointer: fine) and (min-width: 1280px)";
+
+
+
+/*  N O R M A L I Z E 
+	========================================================================== */
+    @import "normalize";
+
+
+html,
+body {
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh; // keeps the footer at the foot of the page even if content is less
+    
+    // TO USE FURTHER AS REM
+    font-size: calc(4px + 6vw);
+    @media #{ $portrait--440-min-w } { font-size: calc(15px + 3vw); }
+    @media #{ $landscape } { font-size: calc(12px + 2vw); }
+    @media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: calc(18px + 1vw) }
+    @media #{ $big-1336-min-h } and (orientation: landscape) { font-size: calc(6px + 2vw) }
+}
+
+/*
+* { // normalize for iOS
+    margin: 0;
+    padding: 0;
+}
+*/
+
+.header-display { font-family: 'Playfair Display', serif; }
+
+.text-normal { font-weight: 400 }
+.text-lighter { font-weight: 200 }
+
+.text-right { text-align: right; }
+
+.m-0 { margin: 0 }
+.p-0 { padding: 0 }
+
+.sub-header {    /* Category & Previous/Next post */
+    font-weight: 200;
+    font-variant-caps: all-small-caps;
+    a, button { 
+        color: $primary-color;
+        font-weight: 300;
+        font-variant-caps: normal;
+    }
+}
+
+.bg-image {
+    position: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+}
+
+*:focus { outline: none; }
+
+a { text-decoration: none; }
+
+li { list-style-type: none; }
+
+ul.sub-menu { padding: 0; }
+
+button {
+    background: none;
+    border: none;
+}
+
+figure { margin: 0; }
+
+.wp-block-image { margin: 0; }
+
+
+
+
+figure img,
+.wpforms-form input, .wpforms-form textarea, 
+.wpcf7-form input, .wpcf7-form textarea {
+    box-shadow: 1px 4px 5px rgba(0,0,0, 0.5);
+    @media #{ $portrait--439-max-w } { box-shadow: 1px 3px 4px rgba(0,0,0, 0.5); }
+    @media #{ $big-2160-min-h } { box-shadow: 2px 6px 6px rgba(0,0,0, 0.5) }
+}
+
+.no-shadow img { box-shadow: none; }
+
+
+// responsive word break class
+.rwd-break { display: inline-block }
+
+
+
+
+
+/*  
+    ==========================================================================
+    H E A D E R . P H P 
+    ========================================================================== 
+*/
+@import "header";
+
+
+
+/*  
+    ==========================================================================
+    H E A D E R - I N D E X . P H P 
+    ========================================================================== 
+*/
+@import "header-index";
+
+
+
+/*
+    ==========================================================================
+    I N D E X . P H P 
+    ==========================================================================
+*/
+@import "index";
+
+
+
+/*
+    ==========================================================================
+    F 0 0 T E R . P H P 
+    ==========================================================================
+*/
+@import "footer";
+
+
+
+/*
+    ==========================================================================
+    S I N G U L A R S
+    ==========================================================================
+*/
+@import "singulars";
+
+
+
+/*
+    ==========================================================================
+    S I N G L E . P H P 
+    ==========================================================================
+*/
+@import "single";
+
+
+
+/*
+    ==========================================================================
+    P A G E . P H P   &   4 0 4 . P H P
+    ==========================================================================
+*/
+@import "page";
+
+
+
+/*
+    ==========================================================================
+    M A S O N R Y   G R I D
+    ==========================================================================
+*/
+@import "masonry_grid";
+
+
+
+/*
+    ==========================================================================
+    B E F O R E   A N I M A T I O N S
+    ==========================================================================
+*/
+@import "before_animations";
+
+
+
+/*
+    ==========================================================================
+    S P I N N E R
+    ==========================================================================
+*/
+@import "spinner";
+
+
+
+/*
+    ==========================================================================
+    I M A G E S   H O V E R
+    ==========================================================================
+*/
+@import "thumbnails_hover";
