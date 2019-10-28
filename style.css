@@ -521,11 +521,16 @@ figure img,
   }
 }
 
+@media (orientation: landscape) {
+  .index__header {
+    width: 20em;
+  }
+}
+
 @media (min-width: 1440px) and (orientation: landscape) {
   .index__header {
-    font-size: 3.8em;
+    font-size: 3.7em;
     top: 18vh;
-    width: 20em;
   }
 }
 
@@ -996,9 +1001,15 @@ figure img,
   z-index: 3;
 }
 
+@media (orientation: landscape) {
+  .index-container {
+    top: 19.5vh;
+  }
+}
+
 @media (min-width: 1440px) and (orientation: landscape) {
   .index-container {
-    top: 24vh;
+    top: 24.5vh;
   }
 }
 

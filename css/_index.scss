@@ -7,7 +7,8 @@
     position: relative;
     text-align: center;
     top: 15vh;
-    @media (min-width: 1440px) and (orientation: landscape) { top: 24vh; }
+    @media (orientation: landscape) { top: 19.5vh; }
+    @media (min-width: 1440px) and (orientation: landscape) { top: 24.5vh; }
     width: 93vw;
     @media #{ $portrait--440-min-w } { width: 88vw; }
     z-index: 3; 
