@@ -358,33 +358,33 @@ html {
   font-size: 52%;
 }
 
-@media (min-width: 360px) {
+@media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) {
   html {
     font-size: 58%;
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 400px) and (orientation: portrait), (min-height: 400px) and (orientation: landscape) {
   html {
     font-size: 62.5%;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) and (orientation: portrait), (min-height: 768px) and (orientation: landscape) {
   html {
-    font-size: 64%;
+    font-size: 80%;
   }
 }
 
 @media (min-width: 2560px) {
   html {
-    font-size: 75%;
+    font-size: 125%;
   }
 }
 
 @media (min-width: 3840px) {
   html {
-    font-size: 100%;
+    font-size: 200%;
   }
 }
 
@@ -515,10 +515,17 @@ figure img,
   z-index: 3;
 }
 
-@media all and (orientation: landscape) {
+@media (min-width: 440px) {
   .index__header {
-    margin-top: 18vh;
-    width: 19em;
+    width: 16em;
+  }
+}
+
+@media (min-width: 1440px) and (orientation: landscape) {
+  .index__header {
+    font-size: 3.8em;
+    top: 18vh;
+    width: 20em;
   }
 }
 
@@ -545,9 +552,10 @@ figure img,
   margin: 1em 0 1.25em;
 }
 
-@media all and (orientation: landscape) {
+@media (min-width: 1440px) and (orientation: landscape) {
   .index__header__socials {
-    margin: 4.5vh 0 8vh 0;
+    font-size: 1.1em;
+    margin: 1.25em 0 1.5em;
   }
 }
 
@@ -583,14 +591,8 @@ figure img,
 }
 
 .index__header__pages a {
-  padding: .29em 0;
+  padding: .3em 0;
   position: relative;
-}
-
-@media all and (orientation: landscape) {
-  .index__header__pages a {
-    padding: .3em 0;
-  }
 }
 
 .popup-nav {
@@ -994,31 +996,30 @@ figure img,
   z-index: 3;
 }
 
+@media (min-width: 1440px) and (orientation: landscape) {
+  .index-container {
+    top: 24vh;
+  }
+}
+
 @media all and (orientation: portrait) and (min-width: 440px) {
   .index-container {
     width: 88vw;
   }
 }
 
-@media all and (orientation: landscape) {
+@media (min-height: 360px) and (orientation: landscape) {
   .index-container {
     border-top: none;
     margin-left: 14.5vw;
-    margin-top: 8vh;
     padding-top: 0;
     width: 76vw;
   }
 }
 
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
+@media all and (min-height: 360px) and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (min-height: 360px) and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
   .index-container {
     margin-left: 16vw;
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
-  .index-container {
-    margin-top: 5.8vh;
   }
 }
 

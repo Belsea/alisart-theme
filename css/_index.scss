@@ -7,16 +7,14 @@
     position: relative;
     text-align: center;
     top: 15vh;
+    @media (min-width: 1440px) and (orientation: landscape) { top: 24vh; }
     width: 93vw;
     @media #{ $portrait--440-min-w } { width: 88vw; }
-    z-index: 3;   
-
-    @media #{ $landscape } {        
+    z-index: 3; 
+    @media (min-height: 360px) and (orientation: landscape) {        
         border-top: none;
         margin-left: 14.5vw;
-        @media #{ $landscape--1440-min-w }, #{ $desktop } { margin-left: 16vw }
-        margin-top: 8vh;
-        @media #{ $landscape--440-min-h } { margin-top: 5.8vh; }  
+        @media #{ $landscape--1440-min-w }, #{ $desktop } { margin-left: 16vw }         
         padding-top: 0;
         width: 76vw;
     }

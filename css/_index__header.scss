@@ -1,21 +1,20 @@
 .index__header {
     font-size: 2.8em;
-    //@media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: 1.13em; }
     margin: 0 auto; 
     position: relative;
     text-align: center;    
     top: 12.5vh;
     width: 100%;
-    //@media #{ $portrait--440-min-w } { width: calc(300px + 40vw); }
+    @media (min-width: 440px) { width: 16em } // or 600px?
     z-index: 3;
-    @media #{ $landscape } { 
-        margin-top: 18vh;
-        width: 19em;
-       // width: calc(200px + 30vw); 
-        //@media #{ $landscape--440-min-h } { width: calc(300px + 30vw); }
-        //@media #{ $landscape--1440-min-w }, #{ $desktop } { width: 45vw; }
+    @media (min-width: 1440px) and (orientation: landscape) {
+        font-size: 3.8em; 
+        top: 18vh;
+        width: 20em; 
     }
-    a { color: black; }
+    a { 
+        color: black; 
+    }
 }
 
 .index__header__logo { width: 100%; }
@@ -25,9 +24,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1em 0 1.25em; 
-    @media #{ $landscape } { margin: 4.5vh 0 8vh 0; } 
-    li { margin: 0 .5em; }
+    margin: 1em 0 1.25em;
+    @media (min-width: 1440px) and (orientation: landscape) {
+        font-size: 1.1em;
+        margin: 1.25em 0 1.5em;
+    }
+    li { 
+        margin: 0 .5em; 
+    }
     a {        
         padding: 0 .4em .1em;
         &:hover { color: $primary-color--muted; }
@@ -40,11 +44,11 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;    
-    li { margin: .15em .3em; }
-    a {       
-        // to position and size the before pseudo-elements
-        padding: .29em 0;
-        @media #{ $landscape } { padding: .3em 0; }
+    li { 
+        margin: .15em .3em; 
+    }
+    a { // to position and size the before pseudo-elements
+        padding: .3em 0;
         position: relative;
     }
 }

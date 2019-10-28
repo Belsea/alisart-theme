@@ -43,16 +43,16 @@ $desktop:  "all and (pointer: fine) and (min-width: 1280px)";
 html {
     font-family: 'Oswald', sans-serif;
     min-height: 100vh; // keeps the footer at the foot of the page even if content is less
-    
-    // TO USE FURTHER AS REM
+
+    // portrait view also in landscape for smartphones < 360px?
     font-size: 52%;
-    @media (min-width: 360px) { font-size: 58% }
-    @media (min-width: 400px) { font-size: 62.5% }
-    //@media (min-width: 768px) { font-size: 62.5% }
-    //@media (min-width: 1024px) { font-size: 64% }
-    @media (min-width: 1440px) { font-size: 64% }
-    @media (min-width: 2560px) { font-size: 75% }
-    @media (min-width: 3840px) { font-size: 100% }      
+    @media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) { font-size: 58% }
+    @media (min-width: 400px) and (orientation: portrait), (min-height: 400px) and (orientation: landscape) { font-size: 62.5% }
+    @media (min-width: 768px) and (orientation: portrait), (min-height: 768px) and (orientation: landscape) { font-size: 80% }
+    //@media (min-width: 1024px) { font-size:  }
+    //@media (min-width: 1440px) { font-size:  }
+    @media (min-width: 2560px) { font-size: 125% }
+    @media (min-width: 3840px) { font-size: 200% }      
 }
 
 body { margin: 16px }
