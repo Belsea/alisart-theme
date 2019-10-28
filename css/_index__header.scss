@@ -1,18 +1,19 @@
 .index__header {
-    font-size: 1rem;
-    @media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: 1.13em; }
+    font-size: 2.8em;
+    //@media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: 1.13em; }
     margin: 0 auto; 
-    margin-top: 15vh;
     position: relative;
-    text-align: center;
-    width: 91vw;
-    @media #{ $portrait--440-min-w } { width: calc(300px + 40vw); }
+    text-align: center;    
+    top: 12.5vh;
+    width: 100%;
+    //@media #{ $portrait--440-min-w } { width: calc(300px + 40vw); }
     z-index: 3;
     @media #{ $landscape } { 
         margin-top: 18vh;
-        width: calc(200px + 30vw); 
-        @media #{ $landscape--440-min-h } { width: calc(300px + 30vw); }
-        @media #{ $landscape--1440-min-w }, #{ $desktop } { width: 45vw; }
+        width: 19em;
+       // width: calc(200px + 30vw); 
+        //@media #{ $landscape--440-min-h } { width: calc(300px + 30vw); }
+        //@media #{ $landscape--1440-min-w }, #{ $desktop } { width: 45vw; }
     }
     a { color: black; }
 }
@@ -20,31 +21,30 @@
 .index__header__logo { width: 100%; }
 
 .index__header__socials {
-    margin: 3vh 0 5vh 0; 
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0 1.25em; 
     @media #{ $landscape } { margin: 4.5vh 0 8vh 0; } 
-    li {
-        display: inline;
-        margin: 0 2.2vw;
-        @media #{ $landscape } { margin: 0 1vw; }
-    }
+    li { margin: 0 .5em; }
     a {        
-        font-size: 1.11em;
-        padding: .12em .45em;
-        position: relative;
-
+        padding: 0 .4em .1em;
         &:hover { color: $primary-color--muted; }
     }
 }
 
-.index__header__pages {    
-    li {
-        display: inline;        
-        margin: 0 2.1vw; // su firefox manda a capo fino a 1.9vw
-    }
-    a {        
-        font-size: 1em;
+.index__header__pages {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;    
+    li { margin: .15em .3em; }
+    a {       
+        // to position and size the before pseudo-elements
         padding: .29em 0;
         @media #{ $landscape } { padding: .3em 0; }
-        position: relative; /* needed to correctly position the before pseudo-element */      
+        position: relative;
     }
 }

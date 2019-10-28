@@ -40,18 +40,22 @@ $desktop:  "all and (pointer: fine) and (min-width: 1280px)";
     @import "normalize";
 
 
-html,
-body {
+html {
     font-family: 'Oswald', sans-serif;
     min-height: 100vh; // keeps the footer at the foot of the page even if content is less
     
     // TO USE FURTHER AS REM
-    font-size: calc(4px + 6vw);
-    @media #{ $portrait--440-min-w } { font-size: calc(15px + 3vw); }
-    @media #{ $landscape } { font-size: calc(12px + 2vw); }
-    @media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: calc(18px + 1vw) }
-    @media #{ $big-1336-min-h } and (orientation: landscape) { font-size: calc(6px + 2vw) }
+    font-size: 52%;
+    @media (min-width: 360px) { font-size: 58% }
+    @media (min-width: 400px) { font-size: 62.5% }
+    //@media (min-width: 768px) { font-size: 62.5% }
+    //@media (min-width: 1024px) { font-size: 64% }
+    @media (min-width: 1440px) { font-size: 64% }
+    @media (min-width: 2560px) { font-size: 75% }
+    @media (min-width: 3840px) { font-size: 100% }      
 }
+
+body { margin: 16px }
 
 /*
 * { // normalize for iOS

@@ -15,7 +15,7 @@
 
     <header class="index__header">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <img class="index__header-logo" src="<?php echo esc_url(home_url('/wp-content/themes/alisart-theme/images/logo.svg')); ?>" alt="Alice Rossi - makeup artist &amp; hair stylist">
+            <img class="index__header__logo" src="<?php echo esc_url(home_url('/wp-content/themes/alisart-theme/images/logo.svg')); ?>" alt="Alice Rossi - makeup artist &amp; hair stylist">
         </a>
 
         <?php

@@ -17,8 +17,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
+  line-height: 1;
+  /* 1.15 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
 }
@@ -352,39 +352,44 @@ template {
   display: none;
 }
 
-html,
-body {
+html {
   font-family: 'Oswald', sans-serif;
   min-height: 100vh;
-  font-size: calc(4px + 6vw);
+  font-size: 52%;
 }
 
-@media all and (orientation: portrait) and (min-width: 440px) {
-  html,
-  body {
-    font-size: calc(15px + 3vw);
+@media (min-width: 360px) {
+  html {
+    font-size: 58%;
   }
 }
 
-@media all and (orientation: landscape) {
-  html,
-  body {
-    font-size: calc(12px + 2vw);
+@media (min-width: 400px) {
+  html {
+    font-size: 62.5%;
   }
 }
 
-@media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
-  html,
-  body {
-    font-size: calc(18px + 1vw);
+@media (min-width: 1440px) {
+  html {
+    font-size: 64%;
   }
 }
 
-@media all and (min-height: 1336px) and (orientation: landscape) {
-  html,
-  body {
-    font-size: calc(6px + 2vw);
+@media (min-width: 2560px) {
+  html {
+    font-size: 75%;
   }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+body {
+  margin: 16px;
 }
 
 /*
@@ -501,43 +506,19 @@ figure img,
 }
 
 .index__header {
-  font-size: 1rem;
+  font-size: 2.8em;
   margin: 0 auto;
-  margin-top: 15vh;
   position: relative;
   text-align: center;
-  width: 91vw;
+  top: 12.5vh;
+  width: 100%;
   z-index: 3;
-}
-
-@media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
-  .index__header {
-    font-size: 1.13em;
-  }
-}
-
-@media all and (orientation: portrait) and (min-width: 440px) {
-  .index__header {
-    width: calc(300px + 40vw);
-  }
 }
 
 @media all and (orientation: landscape) {
   .index__header {
     margin-top: 18vh;
-    width: calc(200px + 30vw);
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
-  .index__header {
-    width: calc(300px + 30vw);
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
-  .index__header {
-    width: 45vw;
+    width: 19em;
   }
 }
 
@@ -550,7 +531,18 @@ figure img,
 }
 
 .index__header__socials {
-  margin: 3vh 0 5vh 0;
+  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em 0 1.25em;
 }
 
 @media all and (orientation: landscape) {
@@ -560,36 +552,39 @@ figure img,
 }
 
 .index__header__socials li {
-  display: inline;
-  margin: 0 2.2vw;
-}
-
-@media all and (orientation: landscape) {
-  .index__header__socials li {
-    margin: 0 1vw;
-  }
+  margin: 0 .5em;
 }
 
 .index__header__socials a {
-  font-size: 1.11em;
-  padding: .12em .45em;
-  position: relative;
+  padding: 0 .4em .1em;
 }
 
 .index__header__socials a:hover {
   color: #b76c98;
 }
 
+.index__header__pages {
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .index__header__pages li {
-  display: inline;
-  margin: 0 2.1vw;
+  margin: .15em .3em;
 }
 
 .index__header__pages a {
-  font-size: 1em;
   padding: .29em 0;
   position: relative;
-  /* needed to correctly position the before pseudo-element */
 }
 
 @media all and (orientation: landscape) {
@@ -987,16 +982,16 @@ figure img,
 }
 
 .index-container {
+  border-top: 1px solid #92105F;
+  display: block;
+  font-size: 2.8em;
+  margin: 0 auto;
+  padding-top: 2.2vh;
   position: relative;
   text-align: center;
-  margin: 0 auto;
-  z-index: 3;
-  display: block;
-  margin-top: 3vh;
-  padding-top: 2.2vh;
+  top: 15vh;
   width: 93vw;
-  border-top: 1px solid #92105F;
-  font-size: 1rem;
+  z-index: 3;
 }
 
 @media all and (orientation: portrait) and (min-width: 440px) {
@@ -1007,11 +1002,11 @@ figure img,
 
 @media all and (orientation: landscape) {
   .index-container {
+    border-top: none;
     margin-left: 14.5vw;
     margin-top: 8vh;
     padding-top: 0;
     width: 76vw;
-    border-top: none;
   }
 }
 
