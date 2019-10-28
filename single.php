@@ -4,7 +4,9 @@ get_header();
 
 if (have_posts()) :
 
-    while (have_posts()) : the_post();
+    while (have_posts()) :
+
+        the_post();
 
         $categories = get_the_category();
 
@@ -30,7 +32,7 @@ if (have_posts()) :
             </header>
 
             <div class="singular-content grid">
-                <div class="gutter-sizer"></div><!-- empty element only for sizing -->
+                <div class="gutter-sizer"></div>
                 <?php the_content() ?>
             </div>
 

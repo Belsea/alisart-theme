@@ -26,14 +26,14 @@
         <div class="popup-nav__menu">
             <?php
             wp_nav_menu(array(
-                'theme_location' => 'primary',
+                'theme_location' => 'popup-nav_pages',
                 'menu_id'       => '',
                 'menu_class'    => 'pages-nav m-0 p-0',
                 'container'     => ''
             ));
 
             wp_nav_menu(array(
-                'theme_location' => 'header-socials',
+                'theme_location' => 'popup-nav_socials',
                 'menu_id'       => '',
                 'menu_class'    => 'nav-social-links m-0 p-0',
                 'container'     => ''

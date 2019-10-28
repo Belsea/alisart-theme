@@ -20,14 +20,14 @@
 
         <?php
         wp_nav_menu(array(
-            'theme_location' => 'header-socials',
+            'theme_location' => 'index-header_socials',
             'menu_id'       => 'header-social-links',
             'container'     => ''
         ));
         ?>
         <?php
         wp_nav_menu(array(
-            'theme_location' => 'primary',
+            'theme_location' => 'index-header_pages',
             'menu_id'       => 'header-pages-nav',
             'container'     => ''
         ));
@@ -47,14 +47,14 @@
         <div class="popup-nav__menu popup-nav__menu-landscape">
             <?php
             wp_nav_menu(array(
-                'theme_location' => 'primary',
+                'theme_location' => 'popup-nav_pages',
                 'menu_id'       => '',
                 'menu_class'    => 'pages-nav m-0 p-0',
                 'container'     => ''
             ));
 
             wp_nav_menu(array(
-                'theme_location' => 'header-socials',
+                'theme_location' => 'popup-nav_socials',
                 'menu_id'       => '',
                 'menu_class'    => 'nav-social-links m-0 p-0',
                 'container'     => ''
@@ -66,14 +66,14 @@
             <?php
             // ul class=sub-menu after the anchor of portfolio element
             wp_nav_menu(array(
-                'theme_location' => 'primary+secondary',
+                'theme_location' => 'popup-nav_pages-categories',
                 'menu_id'       => '',
                 'menu_class'    => 'pages-nav m-0 p-0',
                 'container'     => ''
             ));
 
             wp_nav_menu(array(
-                'theme_location' => 'header-socials',
+                'theme_location' => 'popup-nav_socials',
                 'menu_id'       => '',
                 'menu_class'    => 'nav-social-links menu',
                 'container'     => ''
