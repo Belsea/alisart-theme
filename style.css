@@ -683,6 +683,7 @@ figure img,
 
 .popup-nav a {
   color: white;
+  position: relative;
 }
 
 .popup-nav__subcontainer {
@@ -875,21 +876,21 @@ figure img,
   }
 }
 
-.popup-nav__menu-portrait__pages-cats {
+.popup-nav__menu-portrait__pages {
   margin-left: .9em;
 }
 
-.popup-nav__menu-portrait__pages-cats > li {
+.popup-nav__menu-portrait__pages > li {
   padding-bottom: 1em;
 }
 
 @media (min-height: 768px) {
-  .popup-nav__menu-portrait__pages-cats > li {
+  .popup-nav__menu-portrait__pages > li {
     padding-bottom: 1.2em;
   }
 }
 
-.popup-nav__menu-portrait__pages-cats ul.sub-menu {
+.popup-nav__menu-portrait__pages ul.sub-menu {
   font-size: .84em;
   font-weight: 300;
   margin-left: .8em;
@@ -898,16 +899,16 @@ figure img,
 }
 
 @media (min-height: 768px) {
-  .popup-nav__menu-portrait__pages-cats ul.sub-menu {
+  .popup-nav__menu-portrait__pages ul.sub-menu {
     margin-top: .4em;
   }
 }
 
-.popup-nav__menu-portrait__pages-cats ul.sub-menu a {
+.popup-nav__menu-portrait__pages ul.sub-menu a {
   padding: .48em 0;
 }
 
-.popup-nav__menu-portrait__pages-cats ul.sub-menu li {
+.popup-nav__menu-portrait__pages ul.sub-menu li {
   border-left: 1px solid rgba(255, 255, 255, 0.6);
   display: block;
   line-height: 2.6;

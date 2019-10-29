@@ -47,6 +47,7 @@
     }
     a { 
         color: white; 
+        position: relative; // to sizing the animation
     }
 }
 
@@ -160,7 +161,7 @@
     }
 }
 
-.popup-nav__menu-portrait__pages-cats {
+.popup-nav__menu-portrait__pages {
     margin-left: .9em;
     & > li {
         padding-bottom: 1em;
