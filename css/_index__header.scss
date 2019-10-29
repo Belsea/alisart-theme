@@ -1,12 +1,12 @@
 .index__header {
     font-size: 2.8em;
     margin: 0 auto; 
+    padding: 0 16px;
     position: relative;
     text-align: center;    
     top: 12.5vh;
-    width: 100%;
     @media (min-width: 440px) { width: 16em } // or 600px?
-    @media (orientation: landscape) { width: 20em }
+    @media (min-width: 1280px) and (orientation: landscape) { width: 20em }
     @media (min-width: 1440px) and (orientation: landscape) {
         font-size: 3.7em; 
         top: 18vh;
@@ -20,14 +20,14 @@
 .index__header__logo { width: 100%; }
 
 .index__header__socials {
-    font-size: 1.2em;
+    font-size: 1.15em;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1em 0 1.25em;
+    margin: 1em 0 1.3em;
     @media (min-width: 1440px) and (orientation: landscape) {
-        font-size: 1.1em;
-        margin: 1.25em 0 1.5em;
+        font-size: 1.05em;
+        margin: 1.25em 0 1.8em;
     }
     li { 
         margin: 0 .5em; 
@@ -44,11 +44,4 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;    
-    li { 
-        margin: .15em .3em; 
-    }
-    a { // to position and size the before pseudo-elements
-        padding: .3em 0;
-        position: relative;
-    }
 }

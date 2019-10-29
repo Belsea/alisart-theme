@@ -2,80 +2,64 @@
 .popup-nav__menu__pages,
 #categories-nav {
     a {
+        padding: .2em .1em;
+        position: relative;
         &:before {
-            border-bottom-right-radius: 100px;
-            border-top-left-radius: 100px; /* seems to much but it suits all screens */
             content: "";
             opacity: 0; 
             position: absolute;
-            transform: rotate(-3deg);
             transition: opacity .1s ease-in, width .2s ease-in;
-            width: 0%;
+            width: 25%;
             z-index: -1;
         }
         &:hover:before { opacity: 1; }
     }
 }
 
-
-
 .index__header__pages,
 .popup-nav__menu__pages {
     a {
-        &:before {
-            height: 55%;
-            left: -6%;  
+        &:before {            
+            border-bottom-left-radius: 200px;
+            border-top-right-radius: 200px;
+            bottom: 18%;
+            height: 60%;
+            left: -4%;              
+            transform: rotate(3deg);
         }
-        &:hover:before { width: 108%; }
+        &:hover:before { width: 110%; }
     }
-
-    li {
-        &.current-menu-item > a:before {
+    li.current-menu-item > a:before {
             opacity: 1;
-            width: 108%;
-        }
+            width: 110%;
     }
 }
 .index__header__pages { 
-    a {
-        &:before { 
-            background: $primary-color--muted2; 
-            bottom: 18%;
-        }
+    a:before { 
+        background: $primary-color--muted2; 
     } 
 }
 .popup-nav__menu__pages { 
-    a {
-        &:before { 
-            background: $white--transparency;
-            bottom: 16%;            
-            @media #{ $landscape } { bottom: 15%; }
-        }
+    a:before { 
+        background: rgba(255, 255, 255, 0.25);
+    }
+    ul.sub-menu a:before {
+        background: rgba(255, 255, 255, 0.2);
     } 
 }
 
-#categories-nav,
-.popup-nav__menu__pages ul.sub-menu {
-    a {
-        &:before {
-            height: 51%;
-            left: unset; // assure transitions start from right
-            right: -6%;
-        }
-    }
-    li {
-        &.current-cat a:before,
-        &.current-menu-item a:before {
-            opacity: 1;
-        }
-        // for the All category
-        &.cat-item-1 a:before,
-        &:first-of-type a:before { right: -25%; }
 
-        &.cat-item-1.current-cat a:before,
-        &.cat-item-1 a:hover:before,
-        &:first-of-type.current-menu-item a:before,
-        &:first-of-type a:hover:before { width: 120%; }
+.popup-nav__menu__pages ul.sub-menu,
+#categories-nav {
+    a:before {            
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 200px;
+        border-top-left-radius: 200px;            
+        border-top-right-radius: 0;
+        bottom: 15%;
+        left: unset; // assure transitions start from right
+        right: -10%;            
+        transform: rotate(-7deg);
     }
 }
 
@@ -87,21 +71,7 @@
         }
         &:hover:before { width: 105%; }
     }
-
-    li {
-        &.current-cat a:before { width: 105%; }
-    }
-}
-
-.popup-nav__menu__pages ul.sub-menu {
-    a {
-        &:before {
-            background: $white--transparency;
-            bottom: 19%;
-        }
-        &:hover:before { width: 106%; }
-    }
-    li {
-        &.current-menu-item a:before { width: 106%; }
+    li.current-cat a:before { 
+        width: 105%; 
     }
 }

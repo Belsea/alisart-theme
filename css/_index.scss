@@ -12,7 +12,7 @@
     width: 93vw;
     @media #{ $portrait--440-min-w } { width: 88vw; }
     z-index: 3; 
-    @media (min-height: 360px) and (orientation: landscape) {        
+    @media (orientation: landscape) {        
         border-top: none;
         margin-left: 14.5vw;
         @media #{ $landscape--1440-min-w }, #{ $desktop } { margin-left: 16vw }         

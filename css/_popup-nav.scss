@@ -1,9 +1,8 @@
 .popup-nav {
     background: $primary-color;
     display: inline-block;
-    font-size: 2.7em;
+    font-size: 2.5em;
     height: 2.2em;    
-    left: 0;    
     opacity: 0;
     padding-top: 0;
     padding-left: 0.6em;
@@ -30,8 +29,8 @@
         top: .4em;
         @media #{ $landscape--440-min-h } { top: .5em; }
         &.show {            
-            transition: width .5s cubic-bezier(0,.7,.6,1), // CLOSING
-                        opacity .3s ease-in, transform .5s cubic-bezier(0,.8,.3,1); // SHOWING
+            transition: opacity .3s ease-in, transform .5s cubic-bezier(0,.8,.3,1), // SHOWING
+                        width .5s cubic-bezier(0,.7,.6,1); // CLOSING 
         }
         &.opened { 
             height: 2.2em;
@@ -39,15 +38,11 @@
             top: .4em;  
             transition: width .8s cubic-bezier(0,.7,.3,1); // OPENING       
             @media #{ $landscape--440-min-h } { top: .5em; }
-            width: 97vw; 
-            .popup-nav__logo { // to suits very small smartphones
-                margin-right: 0; 
-            } 
+            width: 97vw;
         }
     }
     a { 
         color: white; 
-        position: relative; // to sizing the animation
     }
 }
 
@@ -70,11 +65,6 @@
     height: 2.2em;
     vertical-align: top;
     width: 2em;
-    @media #{ $landscape--439-max-h } {
-        &.opened { //necessary for small smartphones
-            margin-right: 8px; 
-        } 
-    }
 }
 
 .popup-nav__toggler__hamburger {     
@@ -144,9 +134,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: .6em;
+    margin-top: .8em;
     @media (min-height: 768px) {
-        margin-top: .8em;
+        margin-top: 1em;
     }
     @media #{ $landscape } { 
         display: none; 
@@ -164,9 +154,9 @@
 .popup-nav__menu-portrait__pages {
     margin-left: .9em;
     & > li {
-        padding-bottom: 1em;
+        padding-bottom: 1.2em;
         @media (min-height: 768px) {
-            padding-bottom: 1.2em;
+            padding-bottom: 1.5em;
         }
     }
     ul.sub-menu {
@@ -179,7 +169,7 @@
         }
         text-align: left;
         a { 
-            padding: .48em 0; 
+            padding: .3em .1em; 
         }
         li { 
             border-left: 1px solid rgba(255, 255, 255, 0.6);
@@ -190,7 +180,7 @@
     }
 }
 
-.popup-nav__menu-portrait__socials {
+.popup-nav__menu__socials {
     display: flex;
     flex-direction: row;
     font-size: 1.1em;
@@ -200,6 +190,12 @@
     a {        
         padding: 0 .4em .1em;
     }
+}
+
+.popup-nav__menu-landscape__pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
 
 /*

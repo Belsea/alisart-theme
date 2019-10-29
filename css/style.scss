@@ -13,7 +13,7 @@ $primary-color:         #92105F;
 $primary-color--muted:  #BE7EA5;
 $primary-color--muted:  hsla(325, 34%, 57%, 1);
 $primary-color--muted2: hsla(328, 36%, 79%, .88); // #e0bdd0
-$white--transparency:   rgba(255, 255, 255, 0.18);
+$white--transparency:   rgba(255, 255, 255, 0.25);
 $gray:                  #393939;
 $gray--lighter:         #B1ACAF;
 $gray--lighter2:        #D0D0D0;
@@ -54,8 +54,6 @@ html {
     @media (min-width: 2560px) { font-size: 125% }
     @media (min-width: 3840px) { font-size: 200% }      
 }
-
-body { margin: 16px }
 
 /*
 * { // normalize for iOS
