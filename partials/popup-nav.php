@@ -24,14 +24,14 @@ endif
       wp_nav_menu(array(
          'theme_location' => $portraitMenu,
          'menu_id'       => '',
-         'menu_class'    => 'popup-nav__pages popup-nav__menu-portrait__pages m-0 p-0',
+         'menu_class'    => 'popup-nav__menu__pages popup-nav__menu-portrait__pages m-0 p-0',
          'container'     => ''
       ));
 
       wp_nav_menu(array(
          'theme_location' => 'popup-nav_socials',
          'menu_id'       => '',
-         'menu_class'    => 'popup-nav__socials popup-nav__menu-portrait__socials m-0 p-0',
+         'menu_class'    => 'popup-nav__menu__socials popup-nav__menu-portrait__socials m-0 p-0',
          'container'     => ''
       ));
       ?>
@@ -42,14 +42,14 @@ endif
       wp_nav_menu(array(
          'theme_location' => 'popup-nav_pages',
          'menu_id'       => '',
-         'menu_class'    => 'popup-nav__pages popup-nav__menu-landscape__pages m-0 p-0',
+         'menu_class'    => 'popup-nav__menu__pages popup-nav__menu-landscape__pages m-0 p-0',
          'container'     => ''
       ));
 
       wp_nav_menu(array(
          'theme_location' => 'popup-nav_socials',
          'menu_id'       => '',
-         'menu_class'    => 'popup-nav__socials popup-nav__menu-landscape__socials m-0 p-0',
+         'menu_class'    => 'popup-nav__menu__socials popup-nav__menu-landscape__socials m-0 p-0',
          'container'     => ''
       ));
       ?>
