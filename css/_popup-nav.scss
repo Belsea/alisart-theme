@@ -26,8 +26,7 @@
         transition: height .5s cubic-bezier(.2,.6,.3,1); // OPENING
     }
     @media #{ $landscape } {
-        top: .4em;
-        @media #{ $landscape--440-min-h } { top: .5em; }
+        top: .5em;
         &.show {            
             transition: opacity .3s ease-in, transform .5s cubic-bezier(0,.8,.3,1), // SHOWING
                         width .5s cubic-bezier(0,.7,.6,1); // CLOSING 
@@ -35,10 +34,9 @@
         &.opened { 
             height: 2.2em;
             padding-top: 0;
-            top: .4em;  
-            transition: width .8s cubic-bezier(0,.7,.3,1); // OPENING       
-            @media #{ $landscape--440-min-h } { top: .5em; }
-            width: 97vw;
+            top: .5em;  
+            transition: width .8s cubic-bezier(0,.7,.3,1); // OPENING
+            width: 95vw; // maybe 96 if i use shadows
         }
     }
     a { 
@@ -144,10 +142,15 @@
 }
 .popup-nav__menu-landscape { 
     display: none;
-    @media #{ $landscape } {         
+    @media #{ $landscape } { 
+        align-items: center;        
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        right: 2.7em;
+        width: calc(95vw - 10em);
     }
 }
 
@@ -195,7 +198,18 @@
 .popup-nav__menu-landscape__pages {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: space-around;
+    min-width: 14em;
+    width: 60%;
+    max-width: 17em;
+}
+
+.popup-nav__menu-landscape__socials {
+    justify-content: space-around;
+    margin-left: 0;
+    min-width: 4em;
+    width: 22%;
+    max-width: 6em;
 }
 
 /*

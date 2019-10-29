@@ -378,13 +378,13 @@ html {
 
 @media (min-width: 2560px) {
   html {
-    font-size: 125%;
+    font-size: 120%;
   }
 }
 
 @media (min-width: 3840px) {
   html {
-    font-size: 200%;
+    font-size: 175%;
   }
 }
 
@@ -519,7 +519,7 @@ figure img,
 
 @media (min-width: 1280px) and (orientation: landscape) {
   .index__header {
-    width: 20em;
+    width: 19em;
   }
 }
 
@@ -628,17 +628,8 @@ figure img,
 
 @media all and (orientation: landscape) {
   .popup-nav {
-    top: .4em;
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
-  .popup-nav {
     top: .5em;
   }
-}
-
-@media all and (orientation: landscape) {
   .popup-nav.show {
     -webkit-transition: opacity 0.3s ease-in, width 0.5s cubic-bezier(0, 0.7, 0.6, 1), -webkit-transform 0.5s cubic-bezier(0, 0.8, 0.3, 1);
     transition: opacity 0.3s ease-in, width 0.5s cubic-bezier(0, 0.7, 0.6, 1), -webkit-transform 0.5s cubic-bezier(0, 0.8, 0.3, 1);
@@ -648,16 +639,10 @@ figure img,
   .popup-nav.opened {
     height: 2.2em;
     padding-top: 0;
-    top: .4em;
+    top: .5em;
     -webkit-transition: width 0.8s cubic-bezier(0, 0.7, 0.3, 1);
     transition: width 0.8s cubic-bezier(0, 0.7, 0.3, 1);
-    width: 97vw;
-  }
-}
-
-@media all and (orientation: landscape) and (orientation: landscape) and (min-height: 440px) {
-  .popup-nav.opened {
-    top: .5em;
+    width: 95vw;
   }
 }
 
@@ -836,6 +821,9 @@ figure img,
 
 @media all and (orientation: landscape) {
   .popup-nav__menu-landscape {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -846,6 +834,10 @@ figure img,
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 2.7em;
+    width: calc(95vw - 10em);
   }
 }
 
@@ -916,9 +908,20 @@ figure img,
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-width: 14em;
+  width: 60%;
+  max-width: 17em;
+}
+
+.popup-nav__menu-landscape__socials {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 0;
+  min-width: 4em;
+  width: 22%;
+  max-width: 6em;
 }
 
 /*
