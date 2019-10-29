@@ -18,7 +18,7 @@ endif
       </button>
    </div>
 
-   <div class="popup-nav__menu popup-nav__menu-portrait">
+   <div id="popup-nav__menu-portrait" class="popup-nav__menu popup-nav__menu-portrait">
       <?php
       // ul class=sub-menu inside the li of portfolio
       wp_nav_menu(array(
