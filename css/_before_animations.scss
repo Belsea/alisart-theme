@@ -23,7 +23,8 @@
 }
 
 .index__header__pages,
-.popup-nav__menu__pages {
+.popup-nav__menu__pages,
+.index__categories {
     a {
         &:before {            
             border-bottom-left-radius: 200px;
@@ -65,19 +66,16 @@
         bottom: 15%;
         left: unset; // assure transitions start from right
         right: -10%;            
-        transform: rotate(-7deg);
+        transform: rotate(-6deg);
     }
 }
 
 .index__categories {
-    a {
-        &:before {
-            background: $gray--lighter2;
-            bottom: 20%;
-        }
-        &:hover:before { width: 105%; }
+    a:before {
+        background: $gray--lighter2;
     }
     li.current-cat a:before { 
-        width: 105%; 
+        width: 110%; 
+        opacity: 1;
     }
 }

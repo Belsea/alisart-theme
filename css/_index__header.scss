@@ -6,10 +6,11 @@
     text-align: center;    
     top: 12.5vh;
     @media (min-width: 440px) { width: 16em }
+    @media (min-height: 600px) and (orientation: landscape) { top: calc(.5em + 15.5vh) }
     @media (min-width: 1280px) and (orientation: landscape) { width: 19em }
     @media (min-width: 1440px) and (orientation: landscape) {
         font-size: 3.7em; 
-        top: 18vh;
+        top: calc(.5em + 18vh);
     }    
     z-index: 3;
     a { 
