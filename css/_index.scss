@@ -1,23 +1,33 @@
 .index__container {    
+    //align-items: center;
     border-top: .05em solid $primary-color;
-    display: block;     
+    display: grid;   
     font-size: 2.8em;
+    grid-template-areas: 
+        "filter"
+        "content";
+    justify-items: center;
     margin: 0 auto;
     padding-top: calc(.5em + 1vh);
     position: relative;
     text-align: center;
-    top: calc(.5em + 14vh);
-    @media (orientation: landscape) { top: 21vh; }
-    @media (min-width: 1440px) and (orientation: landscape) { top: 25vh; }
+    top: calc(.5em + 14vh);    
     width: 93vw;
-    @media #{ $portrait--440-min-w } { width: 88vw; }
+    @media (min-width: 600px) { width: 88vw; }
     z-index: 3; 
-    @media (orientation: landscape) {        
+    @media (orientation: landscape) {
         border-top: none;
-        margin-left: 14.5vw;
-        @media #{ $landscape--1440-min-w }, #{ $desktop } { margin-left: 16vw }         
+        grid-template-areas: "content filter";
+        grid-template-columns: auto 30%;
+        justify-items: start;
+        margin-left: 14.5vw;       
         padding-top: 0;
-        width: 76vw;
+        top: 19vh;
+        width: 80vw;        
+    }
+    @media (min-width: 1440px) and (orientation: landscape) { 
+        margin-left: 16vw;
+        top: 25vh; 
     }
 }
 
@@ -26,54 +36,58 @@
     flex-direction: row;
     flex-wrap: wrap;
     font-size: .86em;
+    grid-area: filter;
     justify-content: space-around;
-    margin: 0 auto;
     max-width: 18em;
+    width: 100%;
     a { 
         color: $primary-color;
     }
-    @media #{ $landscape } {    
-        box-sizing: border-box;       
+    @media (orientation: landscape) {        
+        align-self: start;   
+        border-left: .05em solid $primary-color;    
         flex-direction: column;
-        float: right; 
-        font-size: .77em;  
-        padding-left: 1.8vw; 
-        text-align: left;   
-        width: 15%;
+        font-size: .77em;
+        max-width: 5.2em;
+        margin-left: .8em; 
+        text-align: left;
         li { 
-            border-left: .04em solid $primary-color;
-            display: table;
             line-height: 2.4;
-            @media #{ $landscape--1440-min-w }, #{ $desktop } { line-height: 2.5 }
-            margin: 0;
-            padding-left: 1.9vw;
+            padding-left: .6em;
         }
     }
-    @media #{ $landscape--1440-min-w }, #{ $desktop } { 
-        padding-left: 1.2vw;
-        li { padding-left: 1.5vw; }
+    @media (min-height: 600px) and (orientation: landscape) {
+        margin-left: 1.4em;
+        li { 
+            line-height: 2.5;
+            padding-left: .8em;
+        }
+    }
+    @media (min-width: 1440px) and (orientation: landscape) {
+        font-size: .87em;
     }
     &.sticky {
-        @media #{ $landscape }  {
+        @media (orientation: landscape)  {
             /* left: calc(calc(calc(76vw / 100) * 85) + 14.5vw); */
             left: 79.1vw;
-            /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
-            @media #{ $landscape--1440-min-w }, #{ $desktop } { left: 80.6vw; }
             position: fixed;
             top: calc(3.14em + 2vh); // circa nav.top + nav.height + 2vh
+        }
+        @media (min-width: 1440px) and (orientation: landscape) {
+            /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
+            left: 80.6vw;
         }
     }
 }
 
-.posts-container {     
-    margin: 0 auto;
+.index__posts {
+    grid-area: content;
     margin-top: calc(.5em + 1.6vh);
     width: 94%;
     @media #{ $portrait--440-min-w } { width: 90%; }
-    @media #{ $landscape } {
-        float: left;
-        margin-top: 0;
-        width: 85%;
+    @media (orientation: landscape) {
+        margin-top: 0;     
+        width: 100%;
     }
 }
 

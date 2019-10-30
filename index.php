@@ -27,7 +27,7 @@ get_header('index');
     </ul>
 
 
-    <div class="posts-container">
+    <div class="index__posts">
 
         <?php
 

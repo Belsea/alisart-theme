@@ -921,8 +921,11 @@ figure img,
 
 .index__container {
   border-top: 0.05em solid #92105F;
-  display: block;
+  display: -ms-grid;
+  display: grid;
   font-size: 2.8em;
+      grid-template-areas: "filter" "content";
+  justify-items: center;
   margin: 0 auto;
   padding-top: calc(.5em + 1vh);
   position: relative;
@@ -932,19 +935,7 @@ figure img,
   z-index: 3;
 }
 
-@media (orientation: landscape) {
-  .index__container {
-    top: 21vh;
-  }
-}
-
-@media (min-width: 1440px) and (orientation: landscape) {
-  .index__container {
-    top: 25vh;
-  }
-}
-
-@media all and (orientation: portrait) and (min-width: 440px) {
+@media (min-width: 600px) {
   .index__container {
     width: 88vw;
   }
@@ -953,15 +944,21 @@ figure img,
 @media (orientation: landscape) {
   .index__container {
     border-top: none;
+        grid-template-areas: "content filter";
+    -ms-grid-columns: auto 30%;
+        grid-template-columns: auto 30%;
+    justify-items: start;
     margin-left: 14.5vw;
     padding-top: 0;
-    width: 76vw;
+    top: 19vh;
+    width: 80vw;
   }
 }
 
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
+@media (min-width: 1440px) and (orientation: landscape) {
   .index__container {
     margin-left: 16vw;
+    top: 25vh;
   }
 }
 
@@ -976,87 +973,90 @@ figure img,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-size: .86em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: filter;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 0 auto;
   max-width: 18em;
+  width: 100%;
 }
 
 .index__categories a {
   color: #92105F;
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .index__categories {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    border-left: 0.05em solid #92105F;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    float: right;
     font-size: .77em;
-    padding-left: 1.8vw;
+    max-width: 5.2em;
+    margin-left: .8em;
     text-align: left;
-    width: 15%;
   }
   .index__categories li {
-    border-left: 0.04em solid #92105F;
-    display: table;
     line-height: 2.4;
-    margin: 0;
-    padding-left: 1.9vw;
+    padding-left: .6em;
   }
 }
 
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
+@media (min-height: 600px) and (orientation: landscape) {
+  .index__categories {
+    margin-left: 1.4em;
+  }
   .index__categories li {
     line-height: 2.5;
+    padding-left: .8em;
   }
 }
 
-@media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
+@media (min-width: 1440px) and (orientation: landscape) {
   .index__categories {
-    padding-left: 1.2vw;
-  }
-  .index__categories li {
-    padding-left: 1.5vw;
+    font-size: .87em;
   }
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .index__categories.sticky {
     /* left: calc(calc(calc(76vw / 100) * 85) + 14.5vw); */
     left: 79.1vw;
-    /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
     position: fixed;
     top: calc(3.14em + 2vh);
   }
 }
 
-@media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
+@media (min-width: 1440px) and (orientation: landscape) {
   .index__categories.sticky {
+    /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
     left: 80.6vw;
   }
 }
 
-.posts-container {
-  margin: 0 auto;
+.index__posts {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: content;
   margin-top: calc(.5em + 1.6vh);
   width: 94%;
 }
 
 @media all and (orientation: portrait) and (min-width: 440px) {
-  .posts-container {
+  .index__posts {
     width: 90%;
   }
 }
 
-@media all and (orientation: landscape) {
-  .posts-container {
-    float: left;
+@media (orientation: landscape) {
+  .index__posts {
     margin-top: 0;
-    width: 85%;
+    width: 100%;
   }
 }
 
