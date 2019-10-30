@@ -1,6 +1,6 @@
 .index__header__pages,
 .popup-nav__menu__pages,
-#categories-nav {
+.index__categories {
     a {
         padding: .2em .1em;
         position: relative;
@@ -13,6 +13,12 @@
             z-index: -1;
         }
         &:hover:before { opacity: 1; }
+    }
+}
+.popup-nav__menu__pages ul.sub-menu,
+.index__categories {
+    a {
+        padding: .3em .1em;
     }
 }
 
@@ -50,7 +56,7 @@
 
 
 .popup-nav__menu__pages ul.sub-menu,
-#categories-nav {
+.index__categories {
     a:before {            
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 200px;
@@ -63,7 +69,7 @@
     }
 }
 
-#categories-nav {
+.index__categories {
     a {
         &:before {
             background: $gray--lighter2;

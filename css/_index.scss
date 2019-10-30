@@ -1,14 +1,14 @@
-.index-container {    
-    border-top: 1px solid $primary-color;
+.index__container {    
+    border-top: .05em solid $primary-color;
     display: block;     
     font-size: 2.8em;
     margin: 0 auto;
-    padding-top: 2.2vh;
+    padding-top: calc(.5em + 1vh);
     position: relative;
     text-align: center;
-    top: 15vh;
-    @media (orientation: landscape) { top: 19.5vh; }
-    @media (min-width: 1440px) and (orientation: landscape) { top: 24.5vh; }
+    top: calc(.5em + 14vh);
+    @media (orientation: landscape) { top: 21vh; }
+    @media (min-width: 1440px) and (orientation: landscape) { top: 25vh; }
     width: 93vw;
     @media #{ $portrait--440-min-w } { width: 88vw; }
     z-index: 3; 
@@ -21,94 +21,69 @@
     }
 }
 
-
-
-/* 
- * PORTRAIT FIRST -> inline layout
- * LANDSCAPE -> side layout through media queries with flexbox
- */
-#categories-nav {
-
-    text-align: center; 
-    font-size: .86rem;
-
+.index__categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: .86em;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 18em;
     a { 
-        color: $primary-color; 
-        position: relative;
-        padding: .48em 0;
+        color: $primary-color;
     }
-
-    li {
-        display: inline;
-        margin: 0 2.7vw;
-        // less if we add the wedding cathegory
-        @media #{ $portrait--440-min-w } { margin: 0 3.6vw; }
-        border: none;
-        line-height: normal;
-        padding: 0;
-    }
-    
-    
-    @media #{ $landscape } {        
+    @media #{ $landscape } {    
+        box-sizing: border-box;       
+        flex-direction: column;
+        float: right; 
+        font-size: .77em;  
+        padding-left: 1.8vw; 
+        text-align: left;   
         width: 15%;
-        float: right;
-        box-sizing: border-box;
-
-        text-align: left;
-        padding-left: 1.8vw;   
-        font-size: .77rem;
-
         li { 
-            display: table;
             border-left: .04em solid $primary-color;
-            margin: 0;
-            padding-left: 1.9vw;
+            display: table;
             line-height: 2.4;
             @media #{ $landscape--1440-min-w }, #{ $desktop } { line-height: 2.5 }
+            margin: 0;
+            padding-left: 1.9vw;
         }
     }
     @media #{ $landscape--1440-min-w }, #{ $desktop } { 
         padding-left: 1.2vw;
         li { padding-left: 1.5vw; }
     }
-
-
     &.sticky {
         @media #{ $landscape }  {
-            position: fixed;
-            top: calc(3.14em + 2vh); // circa nav.top + nav.height + 2vh
             /* left: calc(calc(calc(76vw / 100) * 85) + 14.5vw); */
             left: 79.1vw;
             /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
             @media #{ $landscape--1440-min-w }, #{ $desktop } { left: 80.6vw; }
+            position: fixed;
+            top: calc(3.14em + 2vh); // circa nav.top + nav.height + 2vh
         }
     }
 }
 
-
 .posts-container {     
     margin: 0 auto;
-    margin-top: 3.4vh;
+    margin-top: calc(.5em + 1.6vh);
     width: 94%;
-
     @media #{ $portrait--440-min-w } { width: 90%; }
-
     @media #{ $landscape } {
+        float: left;
         margin-top: 0;
         width: 85%;
-        float: left;
     }
 }
 
-
 #page-counter { 
+    font-size: .88em;    
     margin: 5vh auto 0 auto; 
     width: 40vw;
     @media #{ $portrait--440-min-w } { width: 32vw; }
     @media #{ $landscape } { width: 26vw }
     @media #{ $landscape--440-min-h } { width: 18vw; }
-
-    font-size: .88em;    
 
     #load-more {
         cursor: pointer;

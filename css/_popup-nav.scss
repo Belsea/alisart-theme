@@ -1,6 +1,5 @@
 .popup-nav {
     background: $primary-color;
-    display: inline-block;
     font-size: 2.5em;
     height: 2.2em;    
     opacity: 0;
@@ -25,7 +24,7 @@
         top: 0;             
         transition: height .5s cubic-bezier(.2,.6,.3,1); // OPENING
     }
-    @media #{ $landscape } {
+    @media (orientation: landscape) {
         top: .5em;
         &.show {            
             transition: opacity .3s ease-in, transform .5s cubic-bezier(0,.8,.3,1), // SHOWING
@@ -75,7 +74,7 @@
         border-radius: 1px;
         display: block;        
         height: .13em;
-        @media #{ $landscape } { height: .12em; }
+        @media (orientation: landscape) { height: .12em; }
         left: 0;
         opacity: 1;
         position: absolute;
@@ -108,7 +107,7 @@
     position: relative;
     transform: translate(0, -200%);
     transition: opacity .1s ease, transform .3s ease .05s; // CLOSING
-    @media #{ $landscape } {
+    @media (orientation: landscape) {
         float: right;
         font-size: .95em;
         height: 100%;
@@ -119,10 +118,10 @@
         opacity: 1;
         transform: translate(0, 0);
         transition: transform .35s cubic-bezier(0.2, 0.6, 0.3, 1), opacity .2s ease .25s; // OPENING
-        @media #{ $landscape } {
+        @media (orientation: landscape) {
             transition: transform .2s ease, opacity .1s ease .35s; // OPENING
         }
-        @media #{ $landscape--440-min-h } {            
+        @media (orientation: landscape) and (min-height: 400px) {            
             transition: transform .2s ease, opacity .1s ease .25s; // OPENING
         }
     } 
@@ -136,13 +135,13 @@
     @media (min-height: 768px) {
         margin-top: 1em;
     }
-    @media #{ $landscape } { 
+    @media (orientation: landscape) { 
         display: none; 
     }
 }
 .popup-nav__menu-landscape { 
     display: none;
-    @media #{ $landscape } { 
+    @media (orientation: landscape) { 
         align-items: center;        
         display: flex;
         flex-direction: row;
@@ -158,22 +157,15 @@
     margin-left: .9em;
     & > li {
         padding-bottom: 1.2em;
-        @media (min-height: 768px) {
-            padding-bottom: 1.5em;
-        }
+        @media (min-height: 768px) { padding-bottom: 1.5em; }
     }
     ul.sub-menu {
         font-size: .84em;
         font-weight: 300;
         margin-left: .8em;
         margin-top: .3em;
-        @media (min-height: 768px) {
-            margin-top: .4em;
-        }
+        @media (min-height: 768px) { margin-top: .4em; }
         text-align: left;
-        a { 
-            padding: .3em .1em; 
-        }
         li { 
             border-left: 1px solid rgba(255, 255, 255, 0.6);
             display: block;
@@ -211,89 +203,3 @@
     width: 22%;
     max-width: 6em;
 }
-
-/*
-.pages-nav {   
-    display: block;
-    margin-left: 1.2em;
-    margin-top: 2.4em;
-    @media #{ $portrait--440-min-w } { margin-top: 2.6em; }    
-    text-align: left;
-    a {
-        padding: .32em 0;
-        position: relative;
-    }
-    li {
-        display: block;          
-        line-height: 2.6;
-        @media #{ $portrait--440-min-w } { line-height: 3; }
-    }    
-    @media #{ $landscape } {
-        display: inline-table;
-        height: 100%;
-        margin-left: 0;
-        margin-top: 0;
-        a { 
-            padding: .32em 0; 
-        }
-        li { 
-            display: table-cell;           
-            line-height: inherit;
-            padding-right: 1em;
-            vertical-align: middle;
-            &:last-of-type { padding-right: .8em; }
-            @media #{ $landscape--440-min-h } { 
-                padding-right: 1.8em;
-                &:last-of-type { padding-right: 1.5em; } 
-            }
-            @media #{ $landscape--1440-min-w }, #{ $desktop } {
-                padding-right: 1.5em;
-                &:last-of-type { padding-right: 1.1em; }  
-            }          
-        }
-    }
-}
-
-
-
-.nav-social-links {
-    text-align: left;
-    display: block;
-    float: left;
-    margin-left: .55em;
-
-    a {  
-        padding: .3em .66em;
-
-        &:hover { opacity: 0.8; } 
-    }
-
-    li { 
-        display: inline;         
-        line-height: 2.6;
-
-        &:last-of-type { margin-left: .2em; } // works only in portrait
-
-        @media #{ $portrait--440-min-w } { line-height: 3; } 
-    }
-
-
-    @media #{ $landscape } {
-        display: inline-table;
-        float: none;
-        height: 100%;
-        margin-left: 0;
-
-        a { padding: .3em .6em; }
-
-        li { 
-            display: table-cell;
-            vertical-align: middle;
-            line-height: inherit;
-            padding-right: .2em; // margin non va con le table
-            @media #{ $landscape--440-min-h } { padding-right: .7em; }
-            @media #{ $landscape--1440-min-w }, #{ $desktop } { padding-right: .5em }
-        }
-    }
-}
-*/

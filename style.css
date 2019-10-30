@@ -589,7 +589,6 @@ figure img,
 
 .popup-nav {
   background: #92105F;
-  display: inline-block;
   font-size: 2.5em;
   height: 2.2em;
   opacity: 0;
@@ -626,7 +625,7 @@ figure img,
   transition: height 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav {
     top: .5em;
   }
@@ -700,7 +699,7 @@ figure img,
   width: 100%;
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav__toggler__hamburger span {
     height: .12em;
   }
@@ -747,7 +746,7 @@ figure img,
   transition: opacity .1s ease, transform .3s ease .05s, -webkit-transform .3s ease .05s;
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav__menu {
     float: right;
     font-size: .95em;
@@ -771,7 +770,7 @@ figure img,
   transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.3, 1), opacity 0.2s ease 0.25s, -webkit-transform 0.35s cubic-bezier(0.2, 0.6, 0.3, 1);
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav__menu.opened {
     -webkit-transition: opacity .1s ease .35s, -webkit-transform .2s ease;
     transition: opacity .1s ease .35s, -webkit-transform .2s ease;
@@ -780,7 +779,7 @@ figure img,
   }
 }
 
-@media all and (orientation: landscape) and (min-height: 440px) {
+@media (orientation: landscape) and (min-height: 400px) {
   .popup-nav__menu.opened {
     -webkit-transition: opacity .1s ease .25s, -webkit-transform .2s ease;
     transition: opacity .1s ease .25s, -webkit-transform .2s ease;
@@ -809,7 +808,7 @@ figure img,
   }
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav__menu-portrait {
     display: none;
   }
@@ -819,7 +818,7 @@ figure img,
   display: none;
 }
 
-@media all and (orientation: landscape) {
+@media (orientation: landscape) {
   .popup-nav__menu-landscape {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -867,10 +866,6 @@ figure img,
   .popup-nav__menu-portrait__pages ul.sub-menu {
     margin-top: .4em;
   }
-}
-
-.popup-nav__menu-portrait__pages ul.sub-menu a {
-  padding: .3em .1em;
 }
 
 .popup-nav__menu-portrait__pages ul.sub-menu li {
@@ -924,124 +919,39 @@ figure img,
   max-width: 6em;
 }
 
-/*
-.pages-nav {   
-    display: block;
-    margin-left: 1.2em;
-    margin-top: 2.4em;
-    @media all and (orientation: portrait) and (min-width: 440px) { margin-top: 2.6em; }    
-    text-align: left;
-    a {
-        padding: .32em 0;
-        position: relative;
-    }
-    li {
-        display: block;          
-        line-height: 2.6;
-        @media all and (orientation: portrait) and (min-width: 440px) { line-height: 3; }
-    }    
-    @media all and (orientation: landscape) {
-        display: inline-table;
-        height: 100%;
-        margin-left: 0;
-        margin-top: 0;
-        a { 
-            padding: .32em 0; 
-        }
-        li { 
-            display: table-cell;           
-            line-height: inherit;
-            padding-right: 1em;
-            vertical-align: middle;
-            &:last-of-type { padding-right: .8em; }
-            @media all and (orientation: landscape) and (min-height: 440px) { 
-                padding-right: 1.8em;
-                &:last-of-type { padding-right: 1.5em; } 
-            }
-            @media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
-                padding-right: 1.5em;
-                &:last-of-type { padding-right: 1.1em; }  
-            }          
-        }
-    }
-}
-
-
-
-.nav-social-links {
-    text-align: left;
-    display: block;
-    float: left;
-    margin-left: .55em;
-
-    a {  
-        padding: .3em .66em;
-
-        &:hover { opacity: 0.8; } 
-    }
-
-    li { 
-        display: inline;         
-        line-height: 2.6;
-
-        &:last-of-type { margin-left: .2em; } // works only in portrait
-
-        @media all and (orientation: portrait) and (min-width: 440px) { line-height: 3; } 
-    }
-
-
-    @media all and (orientation: landscape) {
-        display: inline-table;
-        float: none;
-        height: 100%;
-        margin-left: 0;
-
-        a { padding: .3em .6em; }
-
-        li { 
-            display: table-cell;
-            vertical-align: middle;
-            line-height: inherit;
-            padding-right: .2em; // margin non va con le table
-            @media all and (orientation: landscape) and (min-height: 440px) { padding-right: .7em; }
-            @media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) { padding-right: .5em }
-        }
-    }
-}
-*/
-.index-container {
-  border-top: 1px solid #92105F;
+.index__container {
+  border-top: 0.05em solid #92105F;
   display: block;
   font-size: 2.8em;
   margin: 0 auto;
-  padding-top: 2.2vh;
+  padding-top: calc(.5em + 1vh);
   position: relative;
   text-align: center;
-  top: 15vh;
+  top: calc(.5em + 14vh);
   width: 93vw;
   z-index: 3;
 }
 
 @media (orientation: landscape) {
-  .index-container {
-    top: 19.5vh;
+  .index__container {
+    top: 21vh;
   }
 }
 
 @media (min-width: 1440px) and (orientation: landscape) {
-  .index-container {
-    top: 24.5vh;
+  .index__container {
+    top: 25vh;
   }
 }
 
 @media all and (orientation: portrait) and (min-width: 440px) {
-  .index-container {
+  .index__container {
     width: 88vw;
   }
 }
 
 @media (orientation: landscape) {
-  .index-container {
+  .index__container {
     border-top: none;
     margin-left: 14.5vw;
     padding-top: 0;
@@ -1050,93 +960,89 @@ figure img,
 }
 
 @media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
-  .index-container {
+  .index__container {
     margin-left: 16vw;
   }
 }
 
-/* 
- * PORTRAIT FIRST -> inline layout
- * LANDSCAPE -> side layout through media queries with flexbox
- */
-#categories-nav {
-  text-align: center;
-  font-size: .86rem;
+.index__categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: .86em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
+  max-width: 18em;
 }
 
-#categories-nav a {
+.index__categories a {
   color: #92105F;
-  position: relative;
-  padding: .48em 0;
-}
-
-#categories-nav li {
-  display: inline;
-  margin: 0 2.7vw;
-  border: none;
-  line-height: normal;
-  padding: 0;
-}
-
-@media all and (orientation: portrait) and (min-width: 440px) {
-  #categories-nav li {
-    margin: 0 3.6vw;
-  }
 }
 
 @media all and (orientation: landscape) {
-  #categories-nav {
-    width: 15%;
-    float: right;
+  .index__categories {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    text-align: left;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    float: right;
+    font-size: .77em;
     padding-left: 1.8vw;
-    font-size: .77rem;
+    text-align: left;
+    width: 15%;
   }
-  #categories-nav li {
-    display: table;
+  .index__categories li {
     border-left: 0.04em solid #92105F;
+    display: table;
+    line-height: 2.4;
     margin: 0;
     padding-left: 1.9vw;
-    line-height: 2.4;
   }
 }
 
 @media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
-  #categories-nav li {
+  .index__categories li {
     line-height: 2.5;
   }
 }
 
 @media all and (orientation: landscape) and (min-width: 1440px), all and (pointer: fine) and (min-width: 1280px) {
-  #categories-nav {
+  .index__categories {
     padding-left: 1.2vw;
   }
-  #categories-nav li {
+  .index__categories li {
     padding-left: 1.5vw;
   }
 }
 
 @media all and (orientation: landscape) {
-  #categories-nav.sticky {
-    position: fixed;
-    top: calc(3.14em + 2vh);
+  .index__categories.sticky {
     /* left: calc(calc(calc(76vw / 100) * 85) + 14.5vw); */
     left: 79.1vw;
     /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
+    position: fixed;
+    top: calc(3.14em + 2vh);
   }
 }
 
 @media all and (orientation: landscape) and (orientation: landscape) and (min-width: 1440px), all and (orientation: landscape) and (pointer: fine) and (min-width: 1280px) {
-  #categories-nav.sticky {
+  .index__categories.sticky {
     left: 80.6vw;
   }
 }
 
 .posts-container {
   margin: 0 auto;
-  margin-top: 3.4vh;
+  margin-top: calc(.5em + 1.6vh);
   width: 94%;
 }
 
@@ -1148,16 +1054,16 @@ figure img,
 
 @media all and (orientation: landscape) {
   .posts-container {
+    float: left;
     margin-top: 0;
     width: 85%;
-    float: left;
   }
 }
 
 #page-counter {
+  font-size: .88em;
   margin: 5vh auto 0 auto;
   width: 40vw;
-  font-size: .88em;
 }
 
 @media all and (orientation: portrait) and (min-width: 440px) {
@@ -2109,14 +2015,14 @@ body.page footer, body.single footer, body.error404 footer {
 
 .index__header__pages a,
 .popup-nav__menu__pages a,
-#categories-nav a {
+.index__categories a {
   padding: .2em .1em;
   position: relative;
 }
 
 .index__header__pages a:before,
 .popup-nav__menu__pages a:before,
-#categories-nav a:before {
+.index__categories a:before {
   content: "";
   opacity: 0;
   position: absolute;
@@ -2128,8 +2034,13 @@ body.page footer, body.single footer, body.error404 footer {
 
 .index__header__pages a:hover:before,
 .popup-nav__menu__pages a:hover:before,
-#categories-nav a:hover:before {
+.index__categories a:hover:before {
   opacity: 1;
+}
+
+.popup-nav__menu__pages ul.sub-menu a,
+.index__categories a {
+  padding: .3em .1em;
 }
 
 .index__header__pages a:before,
@@ -2167,7 +2078,7 @@ body.page footer, body.single footer, body.error404 footer {
 }
 
 .popup-nav__menu__pages ul.sub-menu a:before,
-#categories-nav a:before {
+.index__categories a:before {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 200px;
   border-top-left-radius: 200px;
@@ -2179,16 +2090,16 @@ body.page footer, body.single footer, body.error404 footer {
           transform: rotate(-7deg);
 }
 
-#categories-nav a:before {
+.index__categories a:before {
   background: #D0D0D0;
   bottom: 20%;
 }
 
-#categories-nav a:hover:before {
+.index__categories a:hover:before {
   width: 105%;
 }
 
-#categories-nav li.current-cat a:before {
+.index__categories li.current-cat a:before {
   width: 105%;
 }
 

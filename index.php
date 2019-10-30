@@ -1,27 +1,27 @@
 <?php
-get_header( 'index' );
+get_header('index');
 ?>
 
-<div class="index-container">
+<div class="index__container">
 
 
-    <ul id="categories-nav" class="menu" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+    <ul id="categories-nav" class="index__categories m-0 p-0" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
         <?php
 
-        if ( $_POST["category"] ) { 
-            $currentCategory = get_cat_ID( $_POST["category"] );
+        if ($_POST["category"]) {
+            $currentCategory = get_cat_ID($_POST["category"]);
         } else {
             $currentCategory = '1';
         }
 
-        wp_list_categories( array(
+        wp_list_categories(array(
             'hide_empty'      => True,
             'orderby'         => 'description',
             'order'           => 'ASC',
-            'current_category'=> $currentCategory,
+            'current_category' => $currentCategory,
             'title_li'        => ''
-        ) );
+        ));
         ?>
 
     </ul>
@@ -30,68 +30,67 @@ get_header( 'index' );
     <div class="posts-container">
 
         <?php
-        
-        if ( $_POST["category"] ) {
 
-            $query = new WP_Query( array(
-                'post_type' 	=> 'post',
-                'tax_query' 	=> array(
+        if ($_POST["category"]) {
+
+            $query = new WP_Query(array(
+                'post_type'     => 'post',
+                'tax_query'     => array(
                     array(
                         'taxonomy' => 'category',
                         'field'    => 'slug',
-                        'terms'    => $_POST[ "category" ],
+                        'terms'    => $_POST["category"],
                     ),
                 ),
-                'post_status' 	=> 'published'
-            ) );
+                'post_status'     => 'published'
+            ));
 
 
-            if( $query->have_posts() ) :
+            if ($query->have_posts()) :
 
                 echo '<div id="inside-loop">';
 
-                    echo '<div id="insider" class="grid">';
+                echo '<div id="insider" class="grid">';
 
-                        echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
+                echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
 
-                        while( $query->have_posts() ) : $query->the_post();
+                while ($query->have_posts()) : $query->the_post();
 
-                            get_template_part( 'content' );
+                    get_template_part('content');
 
-                        endwhile;
+                endwhile;
 
-                    echo '</div>';
+                echo '</div>';
 
                 echo '</div>';
             endif;
 
             wp_reset_postdata();
-
         } else {
 
-            if( have_posts() ) :
+            if (have_posts()) :
 
                 echo '<div id="inside-loop">';
-    
-                    echo '<div id="insider" class="grid">';
-    
-                        echo '<div class="grid-sizer"></div><!-- empty element only for sizing -->';
-                        echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
-    
-                        while( have_posts() ) : the_post();
-    
-                            get_template_part( 'content' );
-    
-                        endwhile;
-    
-                    echo '</div>';
-    
+
+                echo '<div id="insider" class="grid">';
+
+                echo '<div class="grid-sizer"></div><!-- empty element only for sizing -->';
+                echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
+
+                while (have_posts()) : the_post();
+
+                    get_template_part('content');
+
+                endwhile;
+
+                echo '</div>';
+
                 echo '</div>';
             endif;
-        } 
-        
+        }
+
         ?>
-        
+
 
 
         <div id="page-counter" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
@@ -114,7 +113,7 @@ get_header( 'index' );
 
         </div>
 
-    </div> 
+    </div>
 
 
 </div>

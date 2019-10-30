@@ -5,7 +5,7 @@ var menuToggler = document.getElementById('popup-nav__toggler'),
     nav = document.getElementById('popup-nav'),
     navMenus = document.getElementsByClassName('popup-nav__menu');
 
-var postsGrid = document.getElementsByClassName('index-container')[0];
+var postsGrid = document.getElementsByClassName('index__container')[0];
 
 var categoriesNav = document.getElementById('categories-nav'),
     navTop = nav.getBoundingClientRect().top,
