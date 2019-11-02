@@ -54,13 +54,13 @@ function alisart_theme_setup()
 	add_theme_support('menus');
 
 	register_nav_menus(array(
-		'index-header_pages' => __('Index Header Menu - Pages', 'alisart_theme'),
-		'index-header_socials' => __('Index Header Menu - Socials', 'alisart_theme'),
-		'popup-nav_pages' => __('Side Popup Menu - Pages', 'alisart_theme'),
-		'popup-nav_pages-categories' => __('Side Popup Menu - Index&Portrait - Pages & Categories', 'alisart_theme'),
-		'popup-nav_socials' => __('Side Popup Menu - Socials', 'alisart_theme'),
-		'footer_socials' => __('Footer Menu - Socials', 'alisart_theme'),
-		'footer_policies' => __('Footer Menu - Policies', 'alisart_theme')
+		'index-header__pages' => __('Index Header Menu - Pages', 'alisart_theme'),
+		'index-header__socials' => __('Index Header Menu - Socials', 'alisart_theme'),
+		'nav__pages' => __('Popup Menu - Pages', 'alisart_theme'),
+		'nav__pages-cats' => __('Popup Menu - Pages & Categories', 'alisart_theme'),
+		'nav__socials' => __('Popup Menu - Socials', 'alisart_theme'),
+		'footer__socials' => __('Footer Menu - Socials', 'alisart_theme'),
+		'footer__policies' => __('Footer Menu - Policies', 'alisart_theme')
 	));
 
 

@@ -4,7 +4,7 @@
     //   V A R I A B L E S
     var $insideLoop = $('#inside-loop'),
         $categoryLinks = $('#categories-nav li a'),
-        $categoryNavLinks = $('#popup-nav__menu-portrait ul.sub-menu li a');
+        $categoryNavLinks = $('#nav__menu--portrait ul.sub-menu li a');
 
     var $loadMoreButton = $('#load-more'),
         $spinner = $('#spinner'),

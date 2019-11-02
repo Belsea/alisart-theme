@@ -8,51 +8,59 @@
  Text Domain: alisart-theme
 */
 
+$primary-color: #92105f;
+$primary-color--muted: #be7ea5;
+$primary-color--muted: hsla(325, 34%, 57%, 1);
+$primary-color--muted2: hsla(328, 36%, 79%, 0.88); // #e0bdd0
+$white--transparency: rgba(255, 255, 255, 0.25);
+$gray: #393939;
+$gray--lighter: #b1acaf;
+$gray--lighter2: #d0d0d0;
+$gray--lighter3: #dfdfdf;
 
-$primary-color:         #92105F;
-$primary-color--muted:  #BE7EA5;
-$primary-color--muted:  hsla(325, 34%, 57%, 1);
-$primary-color--muted2: hsla(328, 36%, 79%, .88); // #e0bdd0
-$white--transparency:   rgba(255, 255, 255, 0.25);
-$gray:                  #393939;
-$gray--lighter:         #B1ACAF;
-$gray--lighter2:        #D0D0D0;
-$gray--lighter3:        #DFDFDF;
+$portrait--439-max-w: "all and (orientation: portrait) and (max-width: 439px)";
+$portrait--440-min-w: "all and (orientation: portrait) and (min-width: 440px)";
 
-
-$portrait--439-max-w:   "all and (orientation: portrait) and (max-width: 439px)";
-$portrait--440-min-w:   "all and (orientation: portrait) and (min-width: 440px)";
-
-$landscape:             "all and (orientation: landscape)";
-$landscape--439-max-h:  "all and (orientation: landscape) and (max-height: 439px)";
-$landscape--440-min-h:  "all and (orientation: landscape) and (min-height: 440px)";
+$landscape: "all and (orientation: landscape)";
+$landscape--439-max-h: "all and (orientation: landscape) and (max-height: 439px)";
+$landscape--440-min-h: "all and (orientation: landscape) and (min-height: 440px)";
 $landscape--1440-min-w: "all and (orientation: landscape) and (min-width: 1440px)";
 
-$big-1336-min-h:        "all and (min-height: 1336px)";
-$big-2160-min-h:        "all and (min-height: 2160px)";
+$big-1336-min-h: "all and (min-height: 1336px)";
+$big-2160-min-h: "all and (min-height: 2160px)";
 
-$desktop:  "all and (pointer: fine) and (min-width: 1280px)";
-
-
+$desktop: "all and (pointer: fine) and (min-width: 1280px)";
 
 /*  N O R M A L I Z E 
 	========================================================================== */
-    @import "normalize";
-
+@import "normalize";
 
 html {
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
     min-height: 100vh; // keeps the footer at the foot of the page even if content is less
 
     // portrait view also in landscape for smartphones < 360px?
     font-size: 52%;
-    @media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) { font-size: 58% }
-    @media (min-width: 400px) and (orientation: portrait), (min-height: 400px) and (orientation: landscape) { font-size: 62.5% }
-    @media (min-width: 768px) and (orientation: portrait), (min-height: 768px) and (orientation: landscape) { font-size: 80% }
+    @media (min-width: 360px) and (orientation: portrait),
+        (min-height: 360px) and (orientation: landscape) {
+        font-size: 58%;
+    }
+    @media (min-width: 400px) and (orientation: portrait),
+        (min-height: 400px) and (orientation: landscape) {
+        font-size: 62.5%;
+    }
+    @media (min-width: 768px) and (orientation: portrait),
+        (min-height: 768px) and (orientation: landscape) {
+        font-size: 80%;
+    }
     //@media (min-width: 1024px) { font-size:  }
     //@media (min-width: 1440px) { font-size:  }
-    @media (min-width: 2560px) { font-size: 120% }
-    @media (min-width: 3840px) { font-size: 175% }      
+    @media (min-width: 2560px) {
+        font-size: 120%;
+    }
+    @media (min-width: 3840px) {
+        font-size: 175%;
+    }
 }
 
 /*
@@ -62,20 +70,33 @@ html {
 }
 */
 
-.header-display { font-family: 'Playfair Display', serif; }
+.header-display {
+    font-family: "Playfair Display", serif;
+}
 
-.text-normal { font-weight: 400 }
-.text-lighter { font-weight: 200 }
+.text-normal {
+    font-weight: 400;
+}
+.text-lighter {
+    font-weight: 200;
+}
 
-.text-right { text-align: right; }
+.text-right {
+    text-align: right;
+}
 
-.m-0 { margin: 0 }
-.p-0 { padding: 0 }
+.m-0 {
+    margin: 0;
+}
+.p-0 {
+    padding: 0;
+}
 
 .sub-header {
     font-weight: 200;
     font-variant-caps: all-small-caps;
-    a, button { 
+    a,
+    button {
         color: $primary-color;
         font-weight: 300;
         font-variant-caps: normal;
@@ -91,45 +112,61 @@ html {
     z-index: -10;
 }
 
-*:focus { outline: none; }
+*:focus {
+    outline: none;
+}
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
 
-li { list-style-type: none; }
+li {
+    list-style-type: none;
+}
 
-ul.sub-menu { padding: 0; }
+ul.sub-menu {
+    padding: 0;
+}
 
 button {
     background: none;
     border: none;
 }
 
-figure { margin: 0; }
-
-.wp-block-image { margin: 0; }
-
-
-
-
-figure img,
-.wpforms-form input, .wpforms-form textarea, 
-.wpcf7-form input, .wpcf7-form textarea {
-    box-shadow: 1px 4px 5px rgba(0,0,0, 0.5);
-    @media #{ $portrait--439-max-w } { box-shadow: 1px 3px 4px rgba(0,0,0, 0.5); }
-    @media #{ $big-2160-min-h } { box-shadow: 2px 6px 6px rgba(0,0,0, 0.5) }
+figure {
+    margin: 0;
 }
 
-.no-shadow img { box-shadow: none; }
+.wp-block-image {
+    margin: 0;
+}
 
+figure img,
+.wpforms-form input,
+.wpforms-form textarea,
+.wpcf7-form input,
+.wpcf7-form textarea {
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
+    @media #{ $portrait--439-max-w } {
+        box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+    }
+    @media #{ $big-2160-min-h } {
+        box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.no-shadow img {
+    box-shadow: none;
+}
 
 // responsive word break class
-.rwd-break { display: inline-block }
+.rwd-break {
+    display: inline-block;
+}
 
+@import "index-header";
 
-
-@import "index__header";
-
-@import "popup-nav";
+@import "nav";
 
 @import "index";
 

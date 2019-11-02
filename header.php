@@ -13,4 +13,4 @@
 
     <?php get_template_part('partials/responsive-bg') ?>
 
-    <?php get_template_part('partials/popup-nav') ?>
+    <?php get_template_part('partials/nav') ?>

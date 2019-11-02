@@ -1,71 +1,74 @@
-.index__header__pages,
-.popup-nav__menu__pages,
+.index-header__pages,
+.nav__menu__pages,
 .index__categories {
     a {
-        padding: .2em .1em;
+        padding: 0.2em 0.1em;
         position: relative;
         &:before {
             content: "";
-            opacity: 0; 
+            opacity: 0;
             position: absolute;
-            transition: opacity .1s ease-in, width .2s ease-in;
+            transition: opacity 0.1s ease-in, width 0.2s ease-in;
             width: 25%;
             z-index: -1;
         }
-        &:hover:before { opacity: 1; }
+        &:hover:before {
+            opacity: 1;
+        }
     }
 }
-.popup-nav__menu__pages ul.sub-menu,
+.nav__menu__pages ul.sub-menu,
 .index__categories {
     a {
-        padding: .3em .1em;
+        padding: 0.3em 0.1em;
     }
 }
 
-.index__header__pages,
-.popup-nav__menu__pages,
+.index-header__pages,
+.nav__menu__pages,
 .index__categories {
     a {
-        &:before {            
+        &:before {
             border-bottom-left-radius: 200px;
             border-top-right-radius: 200px;
             bottom: 18%;
             height: 60%;
-            left: -4%;              
+            left: -4%;
             transform: rotate(3deg);
         }
-        &:hover:before { width: 110%; }
+        &:hover:before {
+            width: 110%;
+        }
     }
     li.current-menu-item > a:before {
-            opacity: 1;
-            width: 110%;
+        opacity: 1;
+        width: 110%;
     }
 }
-.index__header__pages { 
-    a:before { 
-        background: $primary-color--muted2; 
-    } 
+.index-header__pages {
+    a:before {
+        background: $primary-color--muted2;
+    }
 }
-.popup-nav__menu__pages { 
-    a:before { 
+.nav__menu__pages {
+    a:before {
         background: rgba(255, 255, 255, 0.25);
     }
     ul.sub-menu a:before {
         background: rgba(255, 255, 255, 0.2);
-    } 
+    }
 }
 
-
-.popup-nav__menu__pages ul.sub-menu,
+.nav__menu__pages ul.sub-menu,
 .index__categories {
-    a:before {            
+    a:before {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 200px;
-        border-top-left-radius: 200px;            
+        border-top-left-radius: 200px;
         border-top-right-radius: 0;
         bottom: 15%;
         left: unset; // assure transitions start from right
-        right: -10%;            
+        right: -10%;
         transform: rotate(-6deg);
     }
 }
@@ -74,8 +77,8 @@
     a:before {
         background: $gray--lighter2;
     }
-    li.current-cat a:before { 
-        width: 110%; 
+    li.current-cat a:before {
+        width: 110%;
         opacity: 1;
     }
 }

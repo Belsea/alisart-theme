@@ -13,26 +13,26 @@
 
     <?php get_template_part('partials/responsive-bg') ?>
 
-    <header class="index__header">
+    <header class="index-header">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <img class="index__header__logo" src="<?php echo esc_url(home_url('/wp-content/themes/alisart-theme/images/logo.svg')); ?>" alt="Alice Rossi - makeup artist &amp; hair stylist">
+            <img class="index-header__logo" src="<?php echo esc_url(home_url('/wp-content/themes/alisart-theme/images/logo.svg')); ?>" alt="Alice Rossi - makeup artist &amp; hair stylist">
         </a>
 
         <?php
         wp_nav_menu(array(
-            'theme_location' => 'index-header_socials',
-            'menu_class'       => 'index__header__socials m-0 p-0',
+            'theme_location' => 'index-header__socials',
+            'menu_class'       => 'index-header__socials m-0 p-0',
             'container'     => ''
         ));
         ?>
         <?php
         wp_nav_menu(array(
-            'theme_location' => 'index-header_pages',
-            'menu_class'       => 'index__header__pages m-0 p-0',
+            'theme_location' => 'index-header__pages',
+            'menu_class'       => 'index-header__pages m-0 p-0',
             'container'     => ''
         ));
         ?>
     </header>
 
 
-    <?php get_template_part('partials/popup-nav') ?>
+    <?php get_template_part('partials/nav') ?>

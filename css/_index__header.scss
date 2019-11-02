@@ -1,4 +1,4 @@
-.index__header {
+.index-header {
     font-size: 2.8em;
     margin: 0 auto; 
     padding: 0 16px;
@@ -18,9 +18,9 @@
     }
 }
 
-.index__header__logo { width: 100%; }
+.index-header__logo { width: 100%; }
 
-.index__header__socials {
+.index-header__socials {
     font-size: 1.15em;
     display: flex;
     flex-direction: row;
@@ -39,7 +39,7 @@
     }
 }
 
-.index__header__pages {
+.index-header__pages {
     font-size: 1em;
     display: flex;
     flex-direction: row;
