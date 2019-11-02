@@ -52,7 +52,7 @@ get_header('index');
 
                 echo '<div id="insider" class="grid">';
 
-                echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
+                echo '<div class="gutter-sizer"></div>';
 
                 while ($query->have_posts()) : $query->the_post();
 
@@ -74,8 +74,8 @@ get_header('index');
 
                 echo '<div id="insider" class="grid">';
 
-                echo '<div class="grid-sizer"></div><!-- empty element only for sizing -->';
-                echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
+                echo '<div class="grid-sizer"></div>';
+                echo '<div class="gutter-sizer"></div>';
 
                 while (have_posts()) : the_post();
 

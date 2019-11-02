@@ -160,8 +160,8 @@ function alisart_category_filter()
 
 		echo '<div id="insider" class="grid">';
 
-		echo '<div class="grid-sizer"></div><!-- empty element only for sizing -->';
-		echo '<div class="gutter-sizer"></div><!-- empty element only for sizing -->';
+		echo '<div class="grid-sizer"></div>';
+		echo '<div class="gutter-sizer"></div>';
 
 		while ($query->have_posts()) : $query->the_post();
 

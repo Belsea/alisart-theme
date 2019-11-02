@@ -193,6 +193,15 @@
     }
 }
 
+.nav__menu__pages--landscape {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 14em;
+    width: 60%;
+    max-width: 17em;
+}
+
 .nav__menu__socials {
     display: flex;
     flex-direction: row;
@@ -203,15 +212,6 @@
     a {
         padding: 0 0.4em 0.1em;
     }
-}
-
-.nav__menu__pages--landscape {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    min-width: 14em;
-    width: 60%;
-    max-width: 17em;
 }
 
 .nav__menu__socials--landscape {

@@ -13,16 +13,17 @@
     z-index: 3;
     @media (orientation: landscape) {
         border-top: none;
-        margin-right: 0;
+        margin-right: 3vw;
         padding-top: 0;
         top: calc(0.5em + 15.5vh);
-        width: 86vw;
+        width: 88vw;
     }
     @media (min-height: 600px) and (orientation: landscape) {
         top: calc(0.5em + 20.5vh);
     }
     @media (min-width: 1440px) and (orientation: landscape) {
         top: calc(0.5em + 24.5vh);
+        width: 90vw;
     }
 }
 
@@ -32,6 +33,7 @@
     flex-wrap: wrap;
     font-size: 0.86em;
     justify-content: space-around;
+    margin: 0 auto;
     max-width: 18em;
     width: 100%;
     a {
@@ -39,10 +41,10 @@
     }
     @media (orientation: landscape) {
         border-left: 0.05em solid $primary-color;
+        float: right;
         flex-direction: column;
         font-size: 0.77em;
         max-width: 5.2em;
-        margin-left: 1em;
         text-align: left;
         li {
             line-height: 2.4;
@@ -50,7 +52,6 @@
         }
     }
     @media (min-height: 600px) and (orientation: landscape) {
-        margin-left: 1.4em;
         li {
             line-height: 2.5;
             padding-left: 0.8em;
@@ -61,27 +62,30 @@
     }
     &.sticky {
         @media (orientation: landscape) {
-            /* left: calc(calc(calc(76vw / 100) * 85) + 14.5vw); */
-            left: 79.1vw;
+            right: 3vw;
             position: fixed;
-            top: calc(3.14em + 2vh); // circa nav.top + nav.height + 2vh
+            top: calc(3.024em + 2vh); // circa nav.top + nav.height + 2vh
         }
         @media (min-width: 1920px) and (orientation: landscape) {
-            /* left: calc(calc(calc(76vw / 100) * 85) + 16vw); */
-            left: 80.6vw;
         }
     }
 }
 
 .index__posts {
-    margin-top: calc(0.5em + 1.6vh);
+    margin: calc(0.5em + 1.6vh) auto 0;
     width: 94%;
-    @media #{ $portrait--440-min-w } {
+    @media (min-width: 600px) {
         width: 90%;
     }
     @media (orientation: landscape) {
+        margin-right: 0;
         margin-top: 0;
-        width: 100%;
+        position: relative;
+        right: 5em;
+        width: 78%;
+    }
+    @media (min-width: 1440px) and (orientation: landscape) {
+        right: 5.9em;
     }
 }
 
