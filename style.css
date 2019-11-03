@@ -451,10 +451,6 @@ li {
   list-style-type: none;
 }
 
-ul.sub-menu {
-  padding: 0;
-}
-
 button {
   background: none;
   border: none;
@@ -869,6 +865,7 @@ figure img,
   font-weight: 300;
   margin-left: 0.8em;
   margin-top: 0.3em;
+  padding: 0;
   text-align: left;
 }
 
@@ -1058,61 +1055,61 @@ figure img,
   }
 }
 
-#page-counter {
+.infinite-loader {
   font-size: 0.88em;
   margin: 5vh auto 0 auto;
   width: 40vw;
 }
 
 @media all and (orientation: portrait) and (min-width: 440px) {
-  #page-counter {
+  .infinite-loader {
     width: 32vw;
   }
 }
 
 @media all and (orientation: landscape) {
-  #page-counter {
+  .infinite-loader {
     width: 26vw;
   }
 }
 
 @media all and (orientation: landscape) and (min-height: 440px) {
-  #page-counter {
+  .infinite-loader {
     width: 18vw;
   }
 }
 
-#page-counter #load-more {
+.infinite-loader__container {
   cursor: pointer;
   color: #92105f;
   font-weight: 300;
 }
 
-#page-counter #load-more:hover {
+.infinite-loader__container:hover {
   color: #b76c98;
 }
 
-#page-counter #load-more.loading {
+.infinite-loader__container.loading {
   cursor: default;
 }
 
-#page-counter #load-more #text {
+.infinite-loader__text {
   height: 2em;
   display: block;
 }
 
-#page-counter #load-more #text.hidden {
+.infinite-loader__text.hidden {
   display: none;
 }
 
-#page-counter #load-more #text-completed {
+.infinite-loader__text--completed {
   color: #777;
   font-size: 0.6em;
   display: none;
   height: 3.333em;
 }
 
-#page-counter #load-more #text-completed.show {
+.infinite-loader__text--completed.show {
   display: block;
 }
 

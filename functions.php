@@ -24,6 +24,9 @@ function alisart_theme_enqueue_scripts()
 
 	wp_enqueue_script('sizesAdjustment', get_template_directory_uri() . '/js/sizesAdjustment.js', false, false, true);
 
+	wp_enqueue_script('bioSwitcher', get_template_directory_uri() . '/js/bioSwitcher.js', false, false, true);
+
+
 
 
 	# wp native versions need to be deregistered
@@ -50,7 +53,6 @@ add_action('wp_enqueue_scripts', 'alisart_theme_enqueue_scripts');
 //   T H E M E   S E T U P
 function alisart_theme_setup()
 {
-
 	add_theme_support('menus');
 
 	register_nav_menus(array(
@@ -111,7 +113,6 @@ add_filter('image_size_names_choose', 'alisart_custom_sizes', 10, 1);
  */
 function alisart_add_lazyload_class($content)
 {
-
 	$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
 	$document = new DOMDocument();
 	libxml_use_internal_errors(true);
@@ -143,7 +144,6 @@ add_filter('the_content', 'alisart_add_lazyload_class');
 //   C A T E G O R Y    F I L T E R
 function alisart_category_filter()
 {
-
 	$query = new WP_Query(array(
 		'post_type' 	=> 'post',
 		'tax_query' 	=> array(
@@ -160,7 +160,6 @@ function alisart_category_filter()
 
 		echo '<div id="insider" class="grid">';
 
-		echo '<div class="grid-sizer"></div>';
 		echo '<div class="gutter-sizer"></div>';
 
 		while ($query->have_posts()) : $query->the_post();
@@ -171,9 +170,9 @@ function alisart_category_filter()
 
 		echo '</div>';
 
-	endif;
+		wp_reset_postdata();
 
-	wp_reset_postdata();
+	endif;
 
 	wp_die();
 }
@@ -186,7 +185,6 @@ add_action('wp_ajax_alisart_category_filter', 'alisart_category_filter');
 //   I N F I N I T E    S C R O L L
 function alisart_infinite_scroll()
 {
-
 	$query = new WP_Query(array(
 		'post_type' 	=> 'post',
 		'tax_query' 	=> array(
@@ -208,9 +206,9 @@ function alisart_infinite_scroll()
 
 		endwhile;
 
-	endif;
+		wp_reset_postdata();
 
-	wp_reset_postdata();
+	endif;	
 
 	wp_die();
 }

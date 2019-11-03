@@ -2,18 +2,18 @@
 get_header('index');
 ?>
 
-<div class="index__container">
+<div id="index__container" class="index__container">
 
 
     <ul id="categories-nav" class="index__categories m-0 p-0" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
         <?php
 
-        if ($_POST["category"]) {
+        if ($_POST["category"]) :
             $currentCategory = get_cat_ID($_POST["category"]);
-        } else {
+        else :
             $currentCategory = '1';
-        }
+        endif;
 
         wp_list_categories(array(
             'hide_empty'      => True,
@@ -27,7 +27,7 @@ get_header('index');
     </ul>
 
 
-    <div class="index__posts">
+    <div class="index__posts content__container">
 
         <?php
 
@@ -43,63 +43,46 @@ get_header('index');
                     ),
                 ),
                 'post_status'     => 'published'
-            ));
-
-
-            if ($query->have_posts()) :
-
-                echo '<div id="inside-loop">';
-
-                echo '<div id="insider" class="grid">';
-
-                echo '<div class="gutter-sizer"></div>';
-
-                while ($query->have_posts()) : $query->the_post();
-
-                    get_template_part('content');
-
-                endwhile;
-
-                echo '</div>';
-
-                echo '</div>';
-            endif;
-
-            wp_reset_postdata();
+            ));           
+            
         } else {
 
-            if (have_posts()) :
-
-                echo '<div id="inside-loop">';
-
-                echo '<div id="insider" class="grid">';
-
-                echo '<div class="grid-sizer"></div>';
-                echo '<div class="gutter-sizer"></div>';
-
-                while (have_posts()) : the_post();
-
-                    get_template_part('content');
-
-                endwhile;
-
-                echo '</div>';
-
-                echo '</div>';
-            endif;
+            $query = $wp_query;
         }
+
+        if ($query->have_posts()) :
+
+            echo '<div id="index__loop-container">';
+
+            echo '<div id="insider" class="grid">';
+
+            echo '<div class="gutter-sizer"></div>';
+
+            while ($query->have_posts()) : $query->the_post();
+
+                get_template_part('content');
+
+            endwhile;
+
+            echo '</div>';
+
+            echo '</div>';
+
+            wp_reset_postdata(); // is this needed with this implementation?
+            
+        endif;
 
         ?>
 
 
 
-        <div id="page-counter" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+        <div id="page-counter" class="infinite-loader" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
-            <a id="load-more">
+            <a id="loader" class="infinite-loader__container">
 
-                <p id="text">Load More</p>
+                <p id="loader__text" class="infinite-loader__text">Load More</p>
 
-                <p id="text-completed">You've reached the end.<br>There are no more post to load.</p>
+                <p id="loader__text--completed" class="infinite-loader__text--completed">You've reached the end.<br>There are no more posts to load.</p>
 
                 <!-- Spinner from https://loading.io/spinner/double-ring -->
                 <div id="spinner" class="lds-css">

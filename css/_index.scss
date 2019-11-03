@@ -89,7 +89,7 @@
     }
 }
 
-#page-counter {
+.infinite-loader {
     font-size: 0.88em;
     margin: 5vh auto 0 auto;
     width: 40vw;
@@ -102,36 +102,31 @@
     @media #{ $landscape--440-min-h } {
         width: 18vw;
     }
-
-    #load-more {
-        cursor: pointer;
-        color: $primary-color;
-        font-weight: 300;
-
-        &:hover {
-            color: $primary-color--muted;
-        }
-
-        &.loading {
-            cursor: default;
-        }
-
-        #text {
-            height: 2em; // avoid jumps
-            display: block;
-        }
-        #text.hidden {
-            display: none;
-        }
-
-        #text-completed {
-            color: #777;
-            font-size: 0.6em;
-            display: none;
-            height: 3.333em; // avoid jumps
-            &.show {
-                display: block;
-            }
-        }
+}
+.infinite-loader__container {
+    cursor: pointer;
+    color: $primary-color;
+    font-weight: 300;
+    &:hover {
+        color: $primary-color--muted;
+    }
+    &.loading {
+        cursor: default;
+    }
+}
+.infinite-loader__text {
+    height: 2em; // avoid jumps
+    display: block;
+}
+.infinite-loader__text.hidden {
+    display: none;
+}
+.infinite-loader__text--completed {
+    color: #777;
+    font-size: 0.6em;
+    display: none;
+    height: 3.333em; // avoid jumps
+    &.show {
+        display: block;
     }
 }

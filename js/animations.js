@@ -1,11 +1,11 @@
 // =================================================================================
 //   V A R I A B L E S
-var menuToggler = document.getElementById("nav__toggler"),
+var navToggler = document.getElementById("nav__toggler"),
     hamburger = document.getElementById("hamburger"),
     nav = document.getElementById("nav"),
     navMenus = document.getElementsByClassName("nav__menu");
 
-var postsGrid = document.getElementsByClassName("index__container")[0];
+var indexContainer = document.getElementById("index__container");
 
 var categoriesNav = document.getElementById("categories-nav"),
     navTop = nav.getBoundingClientRect().top,
@@ -13,21 +13,17 @@ var categoriesNav = document.getElementById("categories-nav"),
 
 var nf404 = document.getElementById("nf404-container");
 
-var langBioSwitch = document.getElementById("lang-switch"),
-    bioEng = document.getElementById("bio-eng"),
-    bioIta = document.getElementById("bio-ita");
-
 // =================================================================================
 //   L I S T E N E R S
 
 // ===========================================================
-//  O P E N / C L O S E   M E N U
-menuToggler.addEventListener("click", function() {
+//  O P E N / C L O S E   N A V
+navToggler.addEventListener("click", function() {
     // one classList check to rule them all
 
     if (hamburger.classList.contains("opened")) {
         hamburger.classList.remove("opened");
-        menuToggler.classList.remove("opened");
+        navToggler.classList.remove("opened");
         nav.classList.remove("opened");
         for (var i = 0; i < navMenus.length; i++) {
             if (navMenus[i].classList.contains("opened")) {
@@ -36,7 +32,7 @@ menuToggler.addEventListener("click", function() {
         }
     } else {
         hamburger.classList.add("opened");
-        menuToggler.classList.add("opened");
+        navToggler.classList.add("opened");
         nav.classList.add("opened");
         for (var i = 0; i < navMenus.length; i++) {
             if (!navMenus[i].classList.contains("opened")) {
@@ -47,34 +43,28 @@ menuToggler.addEventListener("click", function() {
 });
 
 // ===========================================================
-//  S H O W   M E N U
+//  S H O W    N A V
 // ===========================================================
 //  IF SINGULAR BUT NOT 404 PAGE
-if (!postsGrid & !nf404) {
+if (!indexContainer & !nf404) {
     nav.classList.add("show");
 }
 
 // ===========================================================
 //  IF INDEX
-if (postsGrid) {
+if (indexContainer) {
     window.addEventListener("scroll", function() {
         //  S H O W   S I D E   N A V
-        if (
-            postsGrid.getBoundingClientRect().top <= 0 &&
-            !nav.classList.contains("show")
-        ) {
+        if (indexContainer.getBoundingClientRect().top <= 0 && !nav.classList.contains("show")) {
             nav.classList.add("show");
         }
-        if (
-            postsGrid.getBoundingClientRect().top > 0 &&
-            nav.classList.contains("show")
-        ) {
+        if (indexContainer.getBoundingClientRect().top > 0 && nav.classList.contains("show")) {
             nav.classList.remove("show");
 
             // also close the nav if open
             if (nav.classList.contains("opened")) {
                 hamburger.classList.remove("opened");
-                menuToggler.classList.remove("opened");
+                navToggler.classList.remove("opened");
                 nav.classList.remove("opened");
                 for (var i = 0; i < navMenus.length; i++) {
                     if (navMenus[i].classList.contains("opened")) {
@@ -93,58 +83,24 @@ if (postsGrid) {
                 screen.orientation.type == "landscape-primary" ||
                 screen.orientation.type == "landscape-secondary"
             ) {
-                if (
-                    postsGrid.getBoundingClientRect().top <=
-                    navTop + navHeight + window.innerHeight * 0.02
-                ) {
+                if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
                     categoriesNav.classList.add("sticky");
                 }
-                if (
-                    postsGrid.getBoundingClientRect().top >
-                    navTop + navHeight + window.innerHeight * 0.02
-                ) {
+                if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
                     categoriesNav.classList.remove("sticky");
                 }
             }
         } else {
             // Safari/iOS
 
-            if (
-                window.orientation == 90 ||
-                window.orientation == -90 ||
-                window.orientation == 270
-            ) {
-                if (
-                    postsGrid.getBoundingClientRect().top <=
-                    navTop + navHeight + window.innerHeight * 0.02
-                ) {
+            if (window.orientation == 90 || window.orientation == -90 || window.orientation == 270) {
+                if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
                     categoriesNav.classList.add("sticky");
                 }
-                if (
-                    postsGrid.getBoundingClientRect().top >
-                    navTop + navHeight + window.innerHeight * 0.02
-                ) {
+                if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
                     categoriesNav.classList.remove("sticky");
                 }
             }
-        }
-    });
-}
-
-// ===========================================================
-//  S W I T C H   B I O   L A N G U A G E
-if (langBioSwitch) {
-    langBioSwitch.addEventListener("click", function() {
-        event.preventDefault();
-
-        if (bioIta.classList.contains("hidden")) {
-            langBioSwitch.innerHTML = "Read it in English";
-            bioIta.classList.remove("hidden");
-            bioEng.classList.add("hidden");
-        } else {
-            langBioSwitch.innerHTML = "Leggilo in italiano";
-            bioEng.classList.remove("hidden");
-            bioIta.classList.add("hidden");
         }
     });
 }
