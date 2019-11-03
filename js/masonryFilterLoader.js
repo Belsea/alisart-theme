@@ -1,6 +1,4 @@
 (function($) {
-    // =================================================================================
-    //   V A R I A B L E S
     var $loopContainer = $("#index__loop-container"),
         $categoryLinks = $("#categories-nav li a"),
         $navCategoryLinks = $("#nav__menu--portrait ul.sub-menu li a");
@@ -31,17 +29,6 @@
             }
         }
     }
-
-    // ======================================================
-    //   I N I T I A L I Z E   M A S O N R Y
-    $(document).ready(function() {
-        $msnry = $(".grid")
-            .masonry(masonrySetup)
-            .imagesLoaded()
-            .progress(function() {
-                $msnry.masonry("layout");
-            });
-    });
 
     // ======================================================
     //   C A T E G O R Y   F I L T E R
@@ -174,7 +161,7 @@
     });
 
     // ==========================================================
-    //   I N F I N I T E   S C R O L L   - ONLY IN INDEX
+    //   I N F I N I T E   S C R O L L
     $("#loader:not(.loading)").on("click", function(e) {
         $infinteLoader
             .addClass("loading")

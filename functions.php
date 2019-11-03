@@ -20,13 +20,11 @@ function alisart_theme_enqueue_scripts()
 	//	S C R I P T S
 
 	# last bool TRUE to load scripts in the footer
-	wp_enqueue_script('animations', get_template_directory_uri() . '/js/animations.js', false, false, true);
+	wp_enqueue_script('navToggler', get_template_directory_uri() . '/js/navToggler.js', false, false, true);
 
 	wp_enqueue_script('sizesAdjustment', get_template_directory_uri() . '/js/sizesAdjustment.js', false, false, true);
 
 	wp_enqueue_script('bioSwitcher', get_template_directory_uri() . '/js/bioSwitcher.js', false, false, true);
-
-
 
 
 	# wp native versions need to be deregistered
@@ -34,11 +32,17 @@ function alisart_theme_enqueue_scripts()
 	wp_deregister_script('imagesLoaded');
 	# wp_register_script for those only needed as dependencies of some other script
 	wp_register_script('imagesLoaded', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js', array('jquery'), '4.1.4', true);
-
 	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('imagesLoaded'), '4.2.2', true);
+	
+	wp_enqueue_script('masonryInitializer', get_template_directory_uri() . '/js/masonryInitializer.js', array('jquery', 'masonry'), false, true);
 
-	wp_enqueue_script('masonryAjaxScroll', get_template_directory_uri() . '/js/masonryAjaxScroll.js', array('jquery', 'masonry'), '1.0.3', true);
 
+	if ( is_home() ) {
+		wp_enqueue_script('indexScrollAnimations', get_template_directory_uri() . '/js/indexScrollAnimations.js', false, false, true);
+
+		wp_enqueue_script('masonryFilterLoader', get_template_directory_uri() . '/js/masonryFilterLoader.js', array('jquery', 'masonry'), false, true);
+	}
+	
 
 	wp_register_script('lazysizes', 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js', false, '4.1.5', true);
 
