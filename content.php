@@ -2,14 +2,14 @@
 
 if (has_post_thumbnail()) : ?>
 
-    <figure class="grid-item portfolio">
+    <figure class="grid__item">
 
         <?php the_post_thumbnail('thumbnail'); ?>
 
-        <figcaption>
+        <figcaption class="meta">
 
-            <div class="post-meta">
-                <h2 class="text-normal"><?php the_title_attribute(); ?></h2>
+            <div class="meta__container">
+                <h2 class="meta__title text-normal playfair-display m-0"><?php the_title_attribute(); ?></h2>
 
                 <?php
                     $categories = get_the_category();
@@ -20,12 +20,12 @@ if (has_post_thumbnail()) : ?>
                         }
                     }
                     ?>
-                <div class="meta-cat-box">
-                    <h3 class="text-normal"><?php echo $category->name; ?></h3>
+                <div class="meta__subcontainer">
+                    <h3 class="meta__category text-normal m-0"><?php echo $category->name; ?></h3>
                 </div>
             </div>
 
-            <a class="view-more" href="<?php the_permalink(); ?>"></a>
+            <a class="meta__link" href="<?php the_permalink(); ?>"></a>
 
         </figcaption>
     </figure>

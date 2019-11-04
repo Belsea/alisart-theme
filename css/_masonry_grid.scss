@@ -5,14 +5,14 @@
  * 2 columns for mobile in portrait orientation
  * 3 columns for mobile in landscape orientation and in portrait orientation with more than 1336px high
  * 4 columns for desktop bigger than 1600px wide
- */ 
-.grid-item {
+ */
+.grid__item {
     width: calc(95% / 2);
     margin-bottom: 6%;
 
     @media #{ $landscape }, #{ $big-1336-min-h } and (orientation: portrait) {
         // 100 - 2gutter
-        width: calc(94% / 3); 
+        width: calc(94% / 3);
         margin-bottom: 3.7%;
     }
 
@@ -23,12 +23,16 @@
     }
 }
 
-.gutter-sizer { 
+.gutter-sizer {
     width: 5%; // S
 
-    @media #{ $landscape }, #{ $big-1336-min-h } and (orientation: portrait) { width: 3%; } // M
+    @media #{ $landscape }, #{ $big-1336-min-h } and (orientation: portrait) {
+        width: 3%;
+    } // M
 
-    @media all and (orientation: landscape) and (min-width: 1600px) { width: 2%; }  // L
+    @media all and (orientation: landscape) and (min-width: 1600px) {
+        width: 2%;
+    } // L
 }
 
 /*
@@ -36,20 +40,24 @@
  * 2 columns for mobile in portrait orientation ( S )
  * 6 columns unit bootstrap-like for mobile in landscape orientation and in portrait orientation with more than 1336px high ( M )
  * 12 columns unit bootstrap-like for desktop bigger than 1600px wide ( L )
- */ 
-.single .grid-item {
+ */
+.single .grid__item {
     width: calc(95% / 2);
 
     @media #{ $landscape }, #{ $big-1336-min-h } and (orientation: portrait) {
         // 100 - 5gutter
-        width: calc(85% / 6); }
+        width: calc(85% / 6);
+    }
 
     @media all and (orientation: landscape) and (min-width: 1600px) {
         // 100 - 11gutter
-        width: calc(78% / 12); }
+        width: calc(78% / 12);
+    }
 }
 
-.single .col-2-s { width: 100% }
+.single .col-2-s {
+    width: 100%;
+}
 
 .single .col-2-m {
     @media #{ $landscape }, #{ $big-1336-min-h } and (orientation: portrait) {
@@ -81,27 +89,27 @@
 .single .col-3-l {
     @media all and (orientation: landscape) and (min-width: 1600px) {
         // 78% / 12 * 3 + 2gutter
-        width: 23.5%; 
+        width: 23.5%;
     }
 }
 
 .single .col-4-l {
     @media all and (orientation: landscape) and (min-width: 1600px) {
         // 78% / 12 * 4 + 3gutter
-        width: 32%; 
+        width: 32%;
     }
 }
 
 .single .col-6-l {
     @media all and (orientation: landscape) and (min-width: 1600px) {
         // 78% / 12 * 6 + 5gutter
-        width: 49%; 
+        width: 49%;
     }
 }
 
 .single .col-8-l {
     @media all and (orientation: landscape) and (min-width: 1600px) {
         // 78% / 12 * 8 + 7gutter
-        width: 66%; 
+        width: 66%;
     }
 }

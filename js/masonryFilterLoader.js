@@ -9,7 +9,7 @@
 
     var masonrySetup = {
         gutter: ".gutter-sizer",
-        itemSelector: ".grid-item",
+        itemSelector: ".grid__item",
         percentPosition: true
     };
 
@@ -36,8 +36,8 @@
         e.preventDefault();
 
         // reset load more button
-        if ($infinteLoader.find("#loader__text--completed").hasClass("show")) {
-            $infinteLoader.find("#loader__text--completed").removeClass("show");
+        if (!$infinteLoader.find("#loader__text--completed").hasClass("hidden")) {
+            $infinteLoader.find("#loader__text--completed").addClass("hidden");
             $infinteLoader
                 .removeClass("loading")
                 .find("#loader__text")
@@ -101,8 +101,8 @@
         e.preventDefault();
 
         // reset load more button
-        if ($infinteLoader.find("#loader__text--completed").hasClass("show")) {
-            $infinteLoader.find("#loader__text--completed").removeClass("show");
+        if (!$infinteLoader.find("#loader__text--completed").hasClass("hidden")) {
+            $infinteLoader.find("#loader__text--completed").addClass("hidden");
             $infinteLoader
                 .removeClass("loading")
                 .find("#loader__text")
@@ -200,7 +200,7 @@
                 if (response == 0) {
                     // hide spinner and inform user by switching load more text
                     $spinner.removeClass("show");
-                    $infinteLoader.find("#loader__text--completed").addClass("show");
+                    $infinteLoader.find("#loader__text--completed").removeClass("hidden");
                 } else {
                     $pageCounter.data("page", $newPage);
                     // response need to be wrapped in jQuery object to work with Masonry

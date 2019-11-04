@@ -82,7 +82,7 @@ get_header('index');
 
                 <p id="loader__text" class="infinite-loader__text m-0">Load More</p>
 
-                <p id="loader__text--completed" class="infinite-loader__text--completed m-0">You've reached the end.<br>There are no more posts to load.</p>
+                <p id="loader__text--completed" class="infinite-loader__text infinite-loader__text--completed hidden m-0">You've reached the end.<br>There are no more posts to load.</p>
 
                 <!-- Spinner from https://loading.io/spinner/double-ring -->
                 <div id="spinner" class="lds-css">

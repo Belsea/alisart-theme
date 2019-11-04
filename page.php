@@ -10,7 +10,7 @@ if (have_posts()) :
 
         <div class="singular-container">
 
-            <h1 class="header-display m-0 text-right"><?php the_title_attribute() ?></h1>
+            <h1 class="playfair-display m-0 text-right"><?php the_title_attribute() ?></h1>
 
             <div class="singular-content">
                 <?php the_content() ?>

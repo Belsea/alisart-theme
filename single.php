@@ -28,7 +28,7 @@ if (have_posts()) :
                     <h2 class="sub-header text-right post-category">CATEGORY <button type="submit"><?php echo $category->name; ?></button></h2>
                 </form>
 
-                <h1 class="header-display m-0 text-right"><?php the_title_attribute() ?></h1>
+                <h1 class="playfair-display m-0 text-right"><?php the_title_attribute() ?></h1>
             </header>
 
             <div class="singular-content grid">

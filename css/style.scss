@@ -41,16 +41,13 @@ html {
 
     // portrait view also in landscape for smartphones < 360px?
     font-size: 52%;
-    @media (min-width: 360px) and (orientation: portrait),
-        (min-height: 360px) and (orientation: landscape) {
+    @media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) {
         font-size: 58%;
     }
-    @media (min-width: 400px) and (orientation: portrait),
-        (min-height: 400px) and (orientation: landscape) {
+    @media (min-width: 400px) and (orientation: portrait), (min-height: 400px) and (orientation: landscape) {
         font-size: 62.5%;
     }
-    @media (min-width: 768px) and (orientation: portrait),
-        (min-height: 768px) and (orientation: landscape) {
+    @media (min-width: 768px) and (orientation: portrait), (min-height: 768px) and (orientation: landscape) {
         font-size: 80%;
     }
     //@media (min-width: 1024px) { font-size:  }
@@ -70,7 +67,7 @@ html {
 }
 */
 
-.header-display {
+.playfair-display {
     font-family: "Playfair Display", serif;
 }
 
