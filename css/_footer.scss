@@ -1,93 +1,48 @@
 footer {
+    align-items: center;
     background: $gray;
-    font-weight: 300;
-    display: inline-block;
     box-sizing: border-box;
-    position: relative; 
-    width: 100%; 
-    line-height: 1.24;
-    @media #{ $landscape } { line-height: 1.15 }
-
-    // COMMENTED BITS ARE IF I NEED TO REINTRODUCE COOKIE/PRIVACY PAGES
-    /* padding: .4em 1.1em;
-    @media #{ $portrait--440-min-w } { padding: .4em 1.38em }
-    @media #{ $landscape } { padding: .4em 1.6em; } */
-
-    padding: .35em 1.1em;
-    @media #{ $portrait--440-min-w } { padding: .3em 1.38em }
-    @media #{ $landscape } { padding: .3em 1.6em; }
-
-    font-size: 1rem;
-    @media #{ $landscape--440-min-h } { font-size: .94rem; }
-    @media #{ $landscape--1440-min-w }, #{ $desktop } { font-size: .9em; }
- 
-    // margin-top strategy leaves a mysterious white line under it
-    top: 14vh;
-    @media #{ $portrait--440-min-w } { top: 12vh; }
-}
-
-
-.site-info {
-    display: table-column;
-    float: left;
-
-    font-size: .51em;
-
-    p {
-        // display: table-cell;
-        display: table;
-        color: $gray--lighter3;
-        span { color: $gray--lighter; }
-        //padding-bottom: .4em;
-        line-height: 1.5;
-    }
-
-    li { display: inline; }
-
-
-    #footer-policies-links {
-        display: table-cell;
-        float: left;
-        text-align: left;
-
-        a { 
-            color: $primary-color--muted2; 
-            &:hover { color: $primary-color--muted; }
-        } 
-
-        li:first-of-type:after {
-            content: " \0007C"; /* entity &verbar; */
-            color: $gray--lighter;
-        }
-    }  
-}
-     
-
-
-#footer-socials-links { 
-    display: table-cell;
-    float: right;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4em;
+    font-weight: 300;
+    justify-content: space-between;
+    padding: 0.3em 1.8em;
     position: relative;
-    left: 10px;
-
-    font-size: .84em;
-
-    a { 
-        color: $gray--lighter3;        
-        &:hover { color: $primary-color--muted2; }
-        padding: .4em .6em;
+    top: calc(0.5em + 30vh);
+    width: 100%;
+    @media (orientation: landscape) {
+        padding: 0.3em 2em;
+        top: calc(0.5em + 33vh);
     }
-
-    li { 
-        display: inline; 
-        vertical-align: sub;
+    @media (min-width: 1440px) and (orientation: landscape) {
+        top: calc(0.5em + 37vh);
     }
+}
 
-    li:first-of-type { 
-        margin-right: .44em; 
-        @media #{ $landscape } { margin: .5em; }
+.footer__p {
+    margin: 0.5em 0;
+    color: $gray--lighter3;
+}
+
+.footer__developer {
+    color: $gray--lighter;
+    &:hover {
+        color: white;
     }
+}
 
-
-    //@media #{ $portrait--439-max-w } { display: none; }
+.footer__socials {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.7em;
+    justify-content: space-between;
+    width: 4.2em;
+    a {
+        color: $gray--lighter3;
+        padding: 0 0.4em 0.1em;
+        &:hover {
+            color: white;
+        }
+    }
 }

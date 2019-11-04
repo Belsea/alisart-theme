@@ -1,22 +1,24 @@
-<footer>
+<footer class="footer">
 
-    <div class="site-info">
-        <p>Copyright <?php echo get_bloginfo(); ?> &copy; <?php echo date("Y"); ?></p>
-        <p><span>Created by Marina Bellacicco</span></p>
+    <div>
+        <p class="footer__p">Copyright <?php echo get_bloginfo(); ?> &copy; <?php echo date("Y"); ?></p>
+        <p class="footer__p"><a href="https://www.linkedin.com/in/marina-bellacicco" class="footer__developer">Created by Marina Bellacicco</a></p>
 
         <?php
-        /* wp_nav_menu( array(
-                'theme_location' => 'footer_policies',
-                'menu_id'       => 'footer-policies-links',
-                'container'     => ''
-            ) ); */
+        /* 
+        wp_nav_menu( array(
+            'theme_location' => 'footer__policies',
+            'menu_class'       => 'footer__policies',
+            'container'     => ''
+        ) ); 
+        */
         ?>
     </div>
 
     <?php
     wp_nav_menu(array(
-        'theme_location' => 'footer_socials',
-        'menu_id'       => 'footer-socials-links',
+        'theme_location' => 'footer__socials',
+        'menu_class'       => 'footer__socials m-0',
         'container'     => ''
     ));
     ?>
