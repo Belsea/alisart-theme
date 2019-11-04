@@ -162,7 +162,7 @@ function alisart_category_filter()
 
 	if ($query->have_posts()) :
 
-		echo '<div id="insider" class="grid">';
+		echo '<div class="grid">';
 
 		echo '<div class="gutter-sizer"></div>';
 

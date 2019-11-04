@@ -5,7 +5,7 @@ get_header('index');
 <div id="index__container" class="index__container">
 
 
-    <ul id="categories-nav" class="index__categories m-0 p-0" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+    <ul id="categories-filter" class="index__categories m-0 p-0" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
         <?php
 
@@ -54,7 +54,7 @@ get_header('index');
 
             echo '<div id="index__loop-container">';
 
-            echo '<div id="insider" class="grid">';
+            echo '<div class="grid">';
 
             echo '<div class="gutter-sizer"></div>';
 
@@ -80,9 +80,9 @@ get_header('index');
 
             <a id="loader" class="infinite-loader__container">
 
-                <p id="loader__text" class="infinite-loader__text">Load More</p>
+                <p id="loader__text" class="infinite-loader__text m-0">Load More</p>
 
-                <p id="loader__text--completed" class="infinite-loader__text--completed">You've reached the end.<br>There are no more posts to load.</p>
+                <p id="loader__text--completed" class="infinite-loader__text--completed m-0">You've reached the end.<br>There are no more posts to load.</p>
 
                 <!-- Spinner from https://loading.io/spinner/double-ring -->
                 <div id="spinner" class="lds-css">

@@ -1,6 +1,6 @@
 (function($) {
     var $loopContainer = $("#index__loop-container"),
-        $categoryLinks = $("#categories-nav li a"),
+        $categoryLinks = $("#categories-filter li a"),
         $navCategoryLinks = $("#nav__menu--portrait ul.sub-menu li a");
 
     var $infinteLoader = $("#loader"),
@@ -12,7 +12,6 @@
         itemSelector: ".grid-item",
         percentPosition: true
     };
-    var $msnry;
 
     // ======================================================
     //   S E T   C U R R E N T   C A T E G O R Y   I N   T H E   N A V
@@ -68,7 +67,7 @@
         }
 
         // A J A X
-        var $categoryData = $("#categories-nav"),
+        var $categoryData = $("#categories-filter"),
             $ajaxurl = $categoryData.data("url");
 
         $.ajax({
@@ -133,7 +132,7 @@
         }
 
         // A J A X
-        var $categoryData = $("#categories-nav"),
+        var $categoryData = $("#categories-filter"),
             $ajaxurl = $categoryData.data("url");
 
         $.ajax({
@@ -206,7 +205,7 @@
                     $pageCounter.data("page", $newPage);
                     // response need to be wrapped in jQuery object to work with Masonry
                     var $response = $(response);
-                    $(".grid")
+                    $msnry = $(".grid")
                         .append($response)
                         .masonry("appended", $response)
                         .imagesLoaded()

@@ -8,7 +8,7 @@ var navToggler = document.getElementById("nav__toggler"),
 
 var navTop = nav.getBoundingClientRect().top;
 var navHeight = nav.getBoundingClientRect().height;
-var categoriesNav = document.getElementById("categories-nav");
+var categoriesFilter = document.getElementById("categories-filter");
 
 window.addEventListener("scroll", function() {
     //  S H O W   S I D E   N A V
@@ -40,20 +40,20 @@ window.addEventListener("scroll", function() {
             screen.orientation.type == "landscape-secondary"
         ) {
             if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
-                categoriesNav.classList.add("sticky");
+                categoriesFilter.classList.add("sticky");
             }
             if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
-                categoriesNav.classList.remove("sticky");
+                categoriesFilter.classList.remove("sticky");
             }
         }
     } else {
         // Safari/iOS
         if (window.orientation == 90 || window.orientation == -90 || window.orientation == 270) {
             if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
-                categoriesNav.classList.add("sticky");
+                categoriesFilter.classList.add("sticky");
             }
             if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
-                categoriesNav.classList.remove("sticky");
+                categoriesFilter.classList.remove("sticky");
             }
         }
     }
