@@ -1,4 +1,4 @@
-.index__container {
+.index__main {
     border-top: 0.05em solid $primary-color;
     font-size: 2.8em;
     margin: 0 auto;
@@ -120,9 +120,6 @@
 .infinite-loader__text {
     height: 2em; // avoid jumps
     display: block;
-}
-.infinite-loader__text.hidden {
-    display: none;
 }
 .infinite-loader__text--completed {
     color: #777;

@@ -13,11 +13,13 @@ if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
 
-        <div class="singular-container slimmer">
+        <div class="main main--slimmer main--page">
 
-            <h1 class="playfair-display m-0 text-right page-title"><?php the_title_attribute() ?></h1>
+            <header class="main__header text--right">
+                <h1 class="main--page__title main__title playfair-display m-0"><?php the_title_attribute() ?></h1>
+            </header>
 
-            <div class="singular-content">
+            <div class="main__content">
                 <?php the_content() ?>
             </div>
 

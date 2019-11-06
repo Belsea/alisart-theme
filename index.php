@@ -2,7 +2,7 @@
 get_header('index');
 ?>
 
-<div id="index__container" class="index__container">
+<div id="index__main" class="index__main">
 
 
     <ul id="categories-filter" class="index__categories m-0 p-0" data-url="<?php echo admin_url('admin-ajax.php'); ?>">

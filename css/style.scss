@@ -39,7 +39,6 @@ html {
     font-family: "Oswald", sans-serif;
     min-height: 100vh; // keeps the footer at the foot of the page even if content is less
 
-    // portrait view also in landscape for smartphones < 360px?
     font-size: 52%;
     @media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) {
         font-size: 58%;
@@ -67,18 +66,25 @@ html {
 }
 */
 
+:not(.block-editor-page) .hidden {
+    display: none;
+}
+
 .playfair-display {
     font-family: "Playfair Display", serif;
 }
 
-.text-normal {
+.text--normal {
     font-weight: 400;
 }
-.text-lighter {
+.text--light {
+    font-weight: 300;
+}
+.text--lighter {
     font-weight: 200;
 }
 
-.text-right {
+.text--right {
     text-align: right;
 }
 
@@ -87,17 +93,6 @@ html {
 }
 .p-0 {
     padding: 0;
-}
-
-.sub-header {
-    font-weight: 200;
-    font-variant-caps: all-small-caps;
-    a,
-    button {
-        color: $primary-color;
-        font-weight: 300;
-        font-variant-caps: normal;
-    }
 }
 
 .bg-image {
@@ -148,12 +143,7 @@ figure img,
     }
 }
 
-.no-shadow img {
-    box-shadow: none;
-}
-
-// responsive word break class
-.rwd-break {
+.resp-word-break {
     display: inline-block;
 }
 
@@ -163,6 +153,12 @@ figure img,
 
 @import "index";
 
+@import "header_n_nav-hovers";
+
+@import "spinner";
+
+@import "thumbnails_hover";
+
 @import "footer";
 
 @import "singulars";
@@ -171,10 +167,8 @@ figure img,
 
 @import "page";
 
-@import "masonry_grid";
+@import "about-page";
 
-@import "before_animations";
+@import "404";
 
-@import "spinner";
-
-@import "thumbnails_hover";
+@import "masonry_grid"; /////// still to be done

@@ -1,5 +1,5 @@
-var indexContainer = document.getElementById("index__container");
-var nf404 = document.getElementById("nf404-container");
+var indexMain = document.getElementById("index__main");
+var error404 = document.getElementById("error404");
 
 var navToggler = document.getElementById("nav__toggler"),
     hamburger = document.getElementById("hamburger"),
@@ -9,7 +9,7 @@ var navToggler = document.getElementById("nav__toggler"),
 // ===========================================================
 //  S H O W    N A V
 //  IF SINGULAR BUT NOT 404 PAGE
-if (!indexContainer & !nf404) {
+if (!indexMain & !error404) {
     nav.classList.add("show");
 }
 

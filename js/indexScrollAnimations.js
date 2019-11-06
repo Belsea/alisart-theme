@@ -1,4 +1,4 @@
-var indexContainer = document.getElementById("index__container");
+var indexMain = document.getElementById("index__main");
 
 var nav = document.getElementById("nav");
 
@@ -12,10 +12,10 @@ var categoriesFilter = document.getElementById("categories-filter");
 
 window.addEventListener("scroll", function() {
     //  S H O W   S I D E   N A V
-    if (indexContainer.getBoundingClientRect().top <= 0 && !nav.classList.contains("show")) {
+    if (indexMain.getBoundingClientRect().top <= 0 && !nav.classList.contains("show")) {
         nav.classList.add("show");
     }
-    if (indexContainer.getBoundingClientRect().top > 0 && nav.classList.contains("show")) {
+    if (indexMain.getBoundingClientRect().top > 0 && nav.classList.contains("show")) {
         nav.classList.remove("show");
 
         // also close the nav if open
@@ -39,20 +39,20 @@ window.addEventListener("scroll", function() {
             screen.orientation.type == "landscape-primary" ||
             screen.orientation.type == "landscape-secondary"
         ) {
-            if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
+            if (indexMain.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
                 categoriesFilter.classList.add("sticky");
             }
-            if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
+            if (indexMain.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
                 categoriesFilter.classList.remove("sticky");
             }
         }
     } else {
         // Safari/iOS
         if (window.orientation == 90 || window.orientation == -90 || window.orientation == 270) {
-            if (indexContainer.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
+            if (indexMain.getBoundingClientRect().top <= navTop + navHeight + window.innerHeight * 0.02) {
                 categoriesFilter.classList.add("sticky");
             }
-            if (indexContainer.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
+            if (indexMain.getBoundingClientRect().top > navTop + navHeight + window.innerHeight * 0.02) {
                 categoriesFilter.classList.remove("sticky");
             }
         }

@@ -20,34 +20,40 @@ if (have_posts()) :
         $next_post = get_next_post();
         ?>
 
-        <article class="singular-container">
+        <article class="main single">
 
-            <header>
+            <header class="single__header text--right">
                 <form method="post" action="<?php echo esc_url(home_url()) ?>">
-                    <input class="hidden-cat" name="category" type="text" value="<?php echo $category->name; ?>">
-                    <h2 class="sub-header text-right post-category">CATEGORY <button type="submit"><?php echo $category->name; ?></button></h2>
+                    <input class="hidden" name="category" type="text" value="<?php echo $category->name; ?>">
+                    <h2 class="single__category single__subheader m-0">
+                        CATEGORY <button class="p-0" type="submit"><?php echo $category->name; ?></button>
+                    </h2>
                 </form>
 
-                <h1 class="playfair-display m-0 text-right"><?php the_title_attribute() ?></h1>
+                <h1 class="main__title playfair-display m-0"><?php the_title_attribute() ?></h1>
             </header>
 
-            <div class="singular-content grid">
+            <div class="main__content grid">
                 <div class="gutter-sizer"></div>
                 <?php the_content() ?>
             </div>
 
-            <div class="post-navigation">
-                <h3 class="sub-header previous-post">
-                    <?php previous_post_link(
-                                '<img src="' . esc_url(home_url("/wp-content/themes/alisart-theme/images/arrow-sx.svg")) . '">
-                        <div> PREVIOUS POST <br> %link </div>'
-                            ); ?>
+            <div class="single-nav">
+                <h3 class="single-nav__item single-nav__item--left">
+                    <?php 
+                    previous_post_link('
+                    <img class="single-nav__arrow single-nav__arrow--left" src="' . esc_url(home_url("/wp-content/themes/alisart-theme/images/arrow-sx.svg")) . '">
+                    <div class="single__subheader"> PREVIOUS POST <br> %link </div>
+                    '); 
+                    ?>
                 </h3>
-                <h3 class="sub-header next-post">
-                    <?php next_post_link(
-                                '<img src="' . esc_url(home_url("/wp-content/themes/alisart-theme/images/arrow-dx.svg")) . '">
-                        <div> NEXT POST <br> %link </div>'
-                            ); ?>
+                <h3 class="single-nav__item single-nav__item--right">
+                    <?php 
+                    next_post_link('
+                    <img class="single-nav__arrow single-nav__arrow--right" src="' . esc_url(home_url("/wp-content/themes/alisart-theme/images/arrow-dx.svg")) . '">
+                    <div class="single__subheader"> NEXT POST <br> %link </div>
+                    '); 
+                    ?>
                 </h3>
             </div>
 

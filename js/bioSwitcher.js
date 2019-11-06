@@ -1,19 +1,26 @@
-var langBioSwitch = document.getElementById("lang-switch"),
-    bioEng = document.getElementById("bio-eng"),
-    bioIta = document.getElementById("bio-ita");
+var langBioSwitch = document.querySelector(".about__switcher a"),
+    bioEng = document.getElementsByClassName("about__text--eng"),
+    bioIta = document.getElementsByClassName("about__text--ita");
 
 if (langBioSwitch) {
     langBioSwitch.addEventListener("click", function() {
         event.preventDefault();
-
-        if (bioIta.classList.contains("hidden")) {
-            langBioSwitch.innerHTML = "Read it in English";
-            bioIta.classList.remove("hidden");
-            bioEng.classList.add("hidden");
+        if (bioIta[0].classList.contains("text--hidden")) {
+            langBioSwitch.textContent = "Read it in English";
+            for (let el of bioIta) {
+                el.classList.remove("text--hidden");
+            }
+            for (let el of bioEng) {
+                el.classList.add("text--hidden");
+            }
         } else {
-            langBioSwitch.innerHTML = "Leggilo in italiano";
-            bioEng.classList.remove("hidden");
-            bioIta.classList.add("hidden");
+            langBioSwitch.textContent = "Leggilo in italiano";
+            for (let el of bioEng) {
+                el.classList.remove("text--hidden");
+            }
+            for (let el of bioIta) {
+                el.classList.add("text--hidden");
+            }
         }
     });
 }
