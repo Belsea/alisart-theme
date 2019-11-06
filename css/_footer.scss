@@ -9,14 +9,11 @@ footer {
     justify-content: space-between;
     padding: 0.3em 1.8em;
     position: relative;
-    top: calc(0.5em + 30vh);
+    top: calc(0.5em + 22vh);
     width: 100%;
     @media (orientation: landscape) {
         padding: 0.3em 2em;
-        top: calc(0.5em + 33vh);
-    }
-    @media (min-width: 1440px) and (orientation: landscape) {
-        top: calc(0.5em + 37vh);
+        top: calc(0.5em + 25vh);
     }
 }
 

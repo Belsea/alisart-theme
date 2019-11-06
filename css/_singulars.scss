@@ -2,9 +2,25 @@
     box-sizing: border-box;
     font-size: 2.8em;
     margin: 0 auto;
-    overflow: hidden;
+    max-width: 88vw;
+    padding: calc(0.5em + 4vh) calc(0.5em + 4vw) calc(0.5em + 5vh);
     position: relative;
     top: calc(0.5em + 10vh);
+    width: calc(20em + 20vw);
+    @media (orientation: landscape) {
+        padding: calc(0.5em + 6vh) calc(0.5em + 4vw);
+    }
+}
+
+.main--slim {
+    width: calc(20em + 10vw);
+}
+
+.main--slimmer {
+    width: 20em;
+    @media (min-width: 600px) {
+        max-width: 75vw;
+    }
 }
 
 .main__title {
@@ -24,79 +40,13 @@
     clear: both;
     position: relative;
     top: calc(0.5em + 2vh);
-
-    figure.wp-block-image img {
+    .wp-block-image img {
         min-width: 100%;
         min-height: 100%;
         height: auto;
     }
-    figure.wp-block-image img[data-sizes="auto"] {
+    .wp-block-image img[data-sizes="auto"] {
         display: block;
         width: 100%;
     }
-}
-
-.page .main.main--slimmer,
-.single .main,
-.error404 .main {
-    width: 86vw;
-    @media #{ $portrait--440-min-w } {
-        width: 76vw;
-    }
-    @media #{ $landscape } {
-        width: 68vw;
-    }
-}
-
-.single .main {
-    @media #{ $landscape--1440-min-w }, #{ $desktop } {
-        width: 64vw;
-    }
-}
-
-.single .main.no-masonry {
-    @media #{ $landscape } {
-        width: 64vw;
-    }
-    @media #{ $landscape--1440-min-w }, #{ $desktop } {
-        width: 56vw;
-    }
-}
-
-.page .main.main--slimmer {
-    @media #{ $landscape--1440-min-w }, #{ $desktop } {
-        width: 52vw;
-    }
-    @media #{ $landscape } {
-        padding: 1em 2.2em 1.4em 2.2em;
-    }
-    @media #{ $landscape--440-min-h } {
-        padding: 1.6em 2.5em 2em 2.5em;
-    }
-    @media #{ $landscape--1440-min-w }, #{ $desktop } {
-        padding: 1.8em 3em 2.4em 3em;
-    }
-}
-
-// VIDEO EMBEDDING
-.wp-block-embed__wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-
-.wp-block-embed__wrapper iframe,
-.wp-block-embed__wrapper object,
-.wp-block-embed__wrapper embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.wp-block-embed__wrapper,
-.main.no-masonry .wp-block-image:last-of-type {
-    margin-bottom: 5vh;
 }

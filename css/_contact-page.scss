@@ -1,0 +1,49 @@
+form.wpcf7-form {
+    margin-top: 2.2em;
+    * {
+        border: none;
+    }
+    p {
+        margin: 1.2em 0;
+    }
+    input,
+    textarea {
+        box-sizing: border-box;
+        padding: 0.4em 0.7em;
+        position: relative;
+        &:focus {
+            outline: auto deepskyblue;
+        }
+    }
+    input {
+        width: 100%;
+        @media (min-width: 600px) {
+            width: 70%;
+        }
+    }
+    textarea {
+        width: 100%;
+        height: 6em;
+    }
+    label,
+    input::placeholder,
+    textarea::placeholder {
+        font-weight: 300;
+    }
+    button,
+    input[type="submit"] {
+        background: $primary-color;
+        color: white;
+        line-height: 1;
+        padding: 0.5em 1.4em;
+        width: auto;
+        &:hover {
+            background: $primary-color--muted;
+        }
+    }
+    .wpcf7-not-valid-tip {
+        margin-top: 0.4em;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+}

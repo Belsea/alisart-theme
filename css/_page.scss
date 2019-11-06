@@ -1,17 +1,14 @@
 .main--page {
     background: rgba($color: #fff, $alpha: 0.5);
-    max-width: 88vw;
-    padding: calc(0.5em + 4vh) calc(0.5em + 4vw);
-    width: calc(20em + 20vw);
-    @media (orientation: landscape) {
-        padding: calc(0.5em + 6vh) calc(0.5em + 4vw);
-    }
+    overflow: auto;
     a {
         color: $primary-color;
         font-family: "Playfair Display", serif;
         font-size: 1.1em;
         font-weight: 700;
-        padding-left: 0.15em;
+        &:hover {
+            color: $primary-color--muted;
+        }
     }
 }
 
@@ -35,82 +32,3 @@
         z-index: -1;
     }
 }
-
-/*
-p a {
-    font-family: "Playfair Display", serif;
-    color: $primary-color;
-    font-weight: 700;
-    font-size: 1.1em;
-    padding-left: 0.15em;
-
-    &:hover {
-        color: $primary-color--muted;
-    }
-
-    &[href="https://www.instagram.com/alisartbeauty"] {
-        padding-right: 0.15em;
-    }
-}
-
-form.wpcf7-form {
-    margin-top: 2.2em;
-    font-size: 0.6em !important;
-
-    * {
-        border: none !important;
-    }
-
-    p {
-        font-size: 1em;
-        margin: 1.2em 0;
-    }
-
-    label,
-    input::placeholder,
-    textarea::placeholder {
-        font-weight: 300 !important;
-    }
-
-    input:not([type="submit"]) {
-        width: 70%;
-        @media #{ $portrait--439-max-w } {
-            width: 100%;
-        }
-    }
-
-    button,
-    input[type="submit"] {
-        color: white;
-        background: $primary-color !important;
-        padding: 0.5em 0.7em;
-
-        &:hover {
-            background: $primary-color--muted !important;
-        }
-    }
-
-    input,
-    textarea {
-        &:focus {
-            outline: auto deepskyblue;
-        }
-        box-sizing: border-box;
-        position: relative;
-        top: 0.1em;
-        padding: 0.5em 0.7em 0.4em 0.7em;
-    }
-
-    textarea {
-        width: 100%;
-        top: 0.2em;
-        height: 6em;
-    }
-
-    .wpcf7-not-valid-tip {
-        margin-top: 0.4em;
-        font-size: 0.8em;
-        font-weight: 300;
-    }
-}
-*/

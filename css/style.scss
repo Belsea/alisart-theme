@@ -121,14 +121,17 @@ button {
     border: none;
 }
 
+.resp-word-break {
+    display: inline-block;
+}
+
+// IMAGES
 figure {
     margin: 0;
 }
-
 .wp-block-image {
     margin: 0;
 }
-
 figure img,
 .wpforms-form input,
 .wpforms-form textarea,
@@ -143,8 +146,25 @@ figure img,
     }
 }
 
-.resp-word-break {
-    display: inline-block;
+// VIDEO EMBEDDING
+.wp-block-embed__wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.wp-block-embed__wrapper iframe,
+.wp-block-embed__wrapper object,
+.wp-block-embed__wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.wp-block-embed__wrapper,
+.main.no-masonry .wp-block-image:last-of-type {
+    margin-bottom: 5vh;
 }
 
 @import "index-header";
@@ -168,6 +188,8 @@ figure img,
 @import "page";
 
 @import "about-page";
+
+@import "contact-page";
 
 @import "404";
 

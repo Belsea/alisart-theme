@@ -19,7 +19,7 @@ if (have_posts()) :
                 <h1 class="main--page__title main__title playfair-display m-0"><?php the_title_attribute() ?></h1>
             </header>
 
-            <div class="main__content">
+            <div class="main--page__content main__content">
                 <?php the_content() ?>
             </div>
 
