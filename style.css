@@ -469,30 +469,8 @@ figure img,
 .wpforms-form textarea,
 .wpcf7-form input,
 .wpcf7-form textarea {
-  -webkit-box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
-}
-
-@media all and (orientation: portrait) and (max-width: 439px) {
-  figure img,
-  .wpforms-form input,
-  .wpforms-form textarea,
-  .wpcf7-form input,
-  .wpcf7-form textarea {
-    -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
-            box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
-  }
-}
-
-@media all and (min-height: 2160px) {
-  figure img,
-  .wpforms-form input,
-  .wpforms-form textarea,
-  .wpcf7-form input,
-  .wpcf7-form textarea {
-    -webkit-box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.5);
-            box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.5);
-  }
+  -webkit-box-shadow: 0.03em 0.1em 0.18em rgba(0, 0, 0, 0.5);
+          box-shadow: 0.03em 0.1em 0.18em rgba(0, 0, 0, 0.5);
 }
 
 .wp-block-embed__wrapper {
@@ -521,8 +499,9 @@ figure img,
   font-size: 2.8em;
   margin: 0 auto;
   padding: 0 16px;
+  position: relative;
   text-align: center;
-  margin-top: 12.5vh;
+  top: 12.5vh;
   z-index: 3;
 }
 
@@ -534,7 +513,7 @@ figure img,
 
 @media (min-height: 600px) and (orientation: landscape) {
   .index-header {
-    margin-top: calc(0.5em + 15.5vh);
+    top: calc(0.5em + 15.5vh);
   }
 }
 
@@ -547,7 +526,7 @@ figure img,
 @media (min-width: 1440px) and (orientation: landscape) {
   .index-header {
     font-size: 3.7em;
-    margin-top: calc(0.5em + 17vh);
+    top: calc(0.5em + 17vh);
   }
 }
 
@@ -942,10 +921,10 @@ figure img,
   border-top: 0.05em solid #92105f;
   font-size: 2.8em;
   margin: 0 auto;
-  margin-top: calc(0.5em + 1.5vh);
   padding-top: calc(0.5em + 1vh);
   position: relative;
   text-align: center;
+  top: calc(0.5em + 14vh);
   width: 93vw;
   z-index: 3;
 }
@@ -960,21 +939,21 @@ figure img,
   .index__main {
     border-top: none;
     margin-right: 3vw;
-    margin-top: calc(0.5em + 3vh);
     padding-top: 0;
+    top: calc(0.5em + 15.5vh);
     width: 88vw;
   }
 }
 
 @media (min-height: 600px) and (orientation: landscape) {
   .index__main {
-    margin-top: calc(0.5em + 5vh);
+    top: calc(0.5em + 20.5vh);
   }
 }
 
 @media (min-width: 1440px) and (orientation: landscape) {
   .index__main {
-    margin-top: calc(0.5em + 7.5vh);
+    top: calc(0.5em + 24.5vh);
     width: 90vw;
   }
 }
@@ -1121,6 +1100,9 @@ figure img,
 }
 
 .home .footer {
+  -webkit-box-flex: unset;
+      -ms-flex-positive: unset;
+          flex-grow: unset;
   top: calc(0.5em + 30vh);
 }
 
@@ -1444,21 +1426,24 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   font-size: 1.4em;
   font-weight: 300;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: calc(0.5em + 11vh);
   padding: 0.3em 1.8em;
   position: relative;
-  top: calc(0.5em + 22vh);
   width: 100%;
 }
 
 @media (orientation: landscape) {
   footer {
+    margin-top: calc(0.5em + 14vh);
     padding: 0.3em 2em;
-    top: calc(0.5em + 25vh);
   }
 }
 
@@ -1499,22 +1484,31 @@ footer {
   color: white;
 }
 
+body.single,
+body.page,
+body.error404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 .main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   font-size: 2.8em;
   margin: 0 auto;
   max-width: 88vw;
-  padding: calc(0.5em + 4vh) calc(0.5em + 4vw) calc(0.5em + 5vh);
   position: relative;
-  top: calc(0.5em + 10vh);
+  margin-top: calc(0.5em + 10vh);
   width: calc(20em + 20vw);
-}
-
-@media (orientation: landscape) {
-  .main {
-    padding: calc(0.5em + 6vh) calc(0.5em + 4vw);
-  }
 }
 
 .main--slim {
@@ -1649,6 +1643,13 @@ footer {
 .main--page {
   background: rgba(255, 255, 255, 0.5);
   overflow: auto;
+  padding: calc(0.5em + 4vh) calc(0.5em + 4vw) calc(0.5em + 5vh);
+}
+
+@media (orientation: landscape) {
+  .main--page {
+    padding: calc(0.5em + 6vh) calc(0.5em + 4vw);
+  }
 }
 
 .main--page a {
@@ -1850,6 +1851,13 @@ form.wpcf7-form .wpcf7-not-valid-tip {
 
 .main--404 {
   text-align: center;
+  margin-top: calc(0.5em + 20vh);
+}
+
+@media (min-width: 1440px) and (orientation: landscape) {
+  .main--404 {
+    margin-top: calc(0.5em + 23vh);
+  }
 }
 
 .main--404__content {

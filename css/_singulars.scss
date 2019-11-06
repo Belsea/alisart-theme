@@ -1,15 +1,21 @@
+body.single,
+body.page,
+body.error404 {
+    // to push the footer down if content isn't enough
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .main {
     box-sizing: border-box;
+    flex-grow: 1;
     font-size: 2.8em;
     margin: 0 auto;
     max-width: 88vw;
-    padding: calc(0.5em + 4vh) calc(0.5em + 4vw) calc(0.5em + 5vh);
     position: relative;
-    top: calc(0.5em + 10vh);
+    margin-top: calc(0.5em + 10vh);
     width: calc(20em + 20vw);
-    @media (orientation: landscape) {
-        padding: calc(0.5em + 6vh) calc(0.5em + 4vw);
-    }
 }
 
 .main--slim {

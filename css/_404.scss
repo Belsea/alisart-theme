@@ -1,5 +1,9 @@
 .main--404 {
     text-align: center;
+    margin-top: calc(0.5em + 20vh);
+    @media (min-width: 1440px) and (orientation: landscape) {
+        margin-top: calc(0.5em + 23vh);
+    }
 }
 
 .main--404__content {

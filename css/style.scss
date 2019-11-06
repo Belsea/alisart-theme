@@ -137,13 +137,7 @@ figure img,
 .wpforms-form textarea,
 .wpcf7-form input,
 .wpcf7-form textarea {
-    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
-    @media #{ $portrait--439-max-w } {
-        box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
-    }
-    @media #{ $big-2160-min-h } {
-        box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.5);
-    }
+    box-shadow: 0.03em 0.1em 0.18em rgba(0, 0, 0, 0.5);
 }
 
 // VIDEO EMBEDDING
