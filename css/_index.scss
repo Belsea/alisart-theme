@@ -13,16 +13,17 @@
     z-index: 3;
     @media (orientation: landscape) {
         border-top: none;
-        margin-right: 3vw;
+        margin-right: 0.5em;
         padding-top: 0;
         top: calc(0.5em + 15.5vh);
         width: 88vw;
     }
     @media (min-height: 600px) and (orientation: landscape) {
+        margin-right: calc(0.5em + 1vw);
         top: calc(0.5em + 20.5vh);
     }
     @media (min-width: 1440px) and (orientation: landscape) {
-        top: calc(0.5em + 24.5vh);
+        top: calc(0.5em + 23vh);
         width: 90vw;
     }
 }
@@ -62,11 +63,12 @@
     }
     &.sticky {
         @media (orientation: landscape) {
-            right: 3vw;
+            right: 1.4rem;
             position: fixed;
             top: calc(3.024em + 2vh); // circa nav.top + nav.height + 2vh
         }
-        @media (min-width: 1920px) and (orientation: landscape) {
+        @media (min-height: 600px) and (orientation: landscape) {
+            right: calc(1.4rem + 1vw);
         }
     }
 }
@@ -81,12 +83,12 @@
     }
     @media (orientation: landscape) {
         margin-right: 0;
-        right: 5em;
+        right: 4.8em;
         top: 0;
         width: 78%;
     }
     @media (min-width: 1440px) and (orientation: landscape) {
-        right: 5.9em;
+        right: 5.8em;
     }
 }
 
@@ -130,11 +132,5 @@
 
 .home .footer {
     flex-grow: unset;
-    top: calc(0.5em + 30vh);
-    @media (orientation: landscape) {
-        top: calc(0.5em + 33vh);
-    }
-    @media (min-width: 1440px) and (orientation: landscape) {
-        top: calc(0.5em + 37vh);
-    }
+    top: calc(0.5em + 22vh);
 }

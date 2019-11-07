@@ -1,16 +1,16 @@
 var triggers = document.getElementsByClassName("wpcf7-form-control"),
-    footerSocials = document.getElementById("footer-socials-links");
+    footerSocials = document.querySelector(".footer__socials");
 
-var headerPagesNav = document.getElementById("header-pages-nav");
-if (headerPagesNav) {
-    var headerPagesNavLI = headerPagesNav.getElementsByTagName("li");
+var indexHeaderPages = document.querySelector(".index-header__pages");
+if (indexHeaderPages) {
+    var indexHeaderPagesLI = indexHeaderPages.getElementsByTagName("li");
 }
 
 var catItems = document.getElementsByClassName("cat-item");
 
 // ===========================================================
 //  A D A P T   S O F T   K E Y B O A R D   T R I G G E R E D   W I N D O W   R E S I Z E
-if (window.orientation == "undefined") {
+if (triggers && window.orientation == "undefined") {
     // not Safari/iOS, doesn't need this function
 
     if (
@@ -41,8 +41,8 @@ if (window.orientation == "undefined") {
 //  C O R R E C T   S P A C E S   O N   I P H O N E S
 
 if (navigator.userAgent.match(/iPhone/i)) {
-    for (var i = 0; i < headerPagesNavLI.length; i++) {
-        headerPagesNavLI[i].style.margin = "0 1.5vw";
+    for (var i = 0; i < indexHeaderPagesLI.length; i++) {
+        indexHeaderPagesLI[i].style.margin = "0 1.5vw";
     }
 }
 

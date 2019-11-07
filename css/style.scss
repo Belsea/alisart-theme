@@ -18,26 +18,11 @@ $gray--lighter: #b1acaf;
 $gray--lighter2: #d0d0d0;
 $gray--lighter3: #dfdfdf;
 
-$portrait--439-max-w: "all and (orientation: portrait) and (max-width: 439px)";
-$portrait--440-min-w: "all and (orientation: portrait) and (min-width: 440px)";
-
-$landscape: "all and (orientation: landscape)";
-$landscape--439-max-h: "all and (orientation: landscape) and (max-height: 439px)";
-$landscape--440-min-h: "all and (orientation: landscape) and (min-height: 440px)";
-$landscape--1440-min-w: "all and (orientation: landscape) and (min-width: 1440px)";
-
-$big-1336-min-h: "all and (min-height: 1336px)";
-$big-2160-min-h: "all and (min-height: 2160px)";
-
-$desktop: "all and (pointer: fine) and (min-width: 1280px)";
-
-/*  N O R M A L I Z E 
-	========================================================================== */
 @import "normalize";
 
 html {
     font-family: "Oswald", sans-serif;
-    min-height: 100vh; // keeps the footer at the foot of the page even if content is less
+    min-height: 100vh;
 
     font-size: 52%;
     @media (min-width: 360px) and (orientation: portrait), (min-height: 360px) and (orientation: landscape) {
@@ -187,4 +172,4 @@ figure img,
 
 @import "404";
 
-@import "masonry_grid"; /////// still to be done
+@import "masonry_grid";
