@@ -12,9 +12,10 @@ function alisart_theme_enqueue_scripts()
 	# wp_register_style in init hook to later conditionally enqueue them, maybe based on page/post type
 	wp_enqueue_style('alisart_style', get_stylesheet_uri(), 'all');
 
-	wp_enqueue_style('font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', '4.7.0', 'all');
+	wp_enqueue_style('font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css', '5.11.2', 'all');
+	wp_enqueue_style('font_awesome_brands', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css', '5.11.2', 'all');
 
-	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Oswald:200,300,400|Playfair+Display:400,700', 'all');
+	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Oswald:200,300,400|Playfair+Display:400,700&display=swap', 'all');
 
 
 	//	S C R I P T S
@@ -164,7 +165,7 @@ function alisart_category_filter()
 
 		echo '<div class="grid">';
 
-		echo '<div class="gutter-sizer"></div>';
+		echo '<div class="grid__gutter"></div>';
 
 		while ($query->have_posts()) : $query->the_post();
 

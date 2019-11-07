@@ -20,7 +20,7 @@ if (have_posts()) :
         $next_post = get_next_post();
         ?>
 
-        <article class="main main--slim single">
+        <article class="main single">
 
             <header class="single__header text--right">
                 <form method="post" action="<?php echo esc_url(home_url()) ?>">
@@ -34,7 +34,7 @@ if (have_posts()) :
             </header>
 
             <div class="main__content grid">
-                <div class="gutter-sizer"></div>
+                <div class="grid__gutter"></div>
                 <?php the_content() ?>
             </div>
 

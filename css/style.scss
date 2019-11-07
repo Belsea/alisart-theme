@@ -34,8 +34,6 @@ html {
     @media (min-width: 768px) and (orientation: portrait), (min-height: 768px) and (orientation: landscape) {
         font-size: 80%;
     }
-    //@media (min-width: 1024px) { font-size:  }
-    //@media (min-width: 1440px) { font-size:  }
     @media (min-width: 2560px) {
         font-size: 120%;
     }
@@ -142,7 +140,7 @@ figure img,
     height: 100%;
 }
 .wp-block-embed__wrapper,
-.main.no-masonry .wp-block-image:last-of-type {
+.single--no-masonry .wp-block-image:last-of-type {
     margin-bottom: 5vh;
 }
 
@@ -156,7 +154,7 @@ figure img,
 
 @import "spinner";
 
-@import "thumbnails_hover";
+@import "thumbnails-hover";
 
 @import "footer";
 
@@ -172,4 +170,4 @@ figure img,
 
 @import "404";
 
-@import "masonry_grid";
+@import "masonry-grid";

@@ -19,7 +19,7 @@
         width: 88vw;
     }
     @media (min-height: 600px) and (orientation: landscape) {
-        margin-right: calc(0.5em + 1vw);
+        margin-right: calc(0.5em + 2.5vw);
         top: calc(0.5em + 20.5vh);
     }
     @media (min-width: 1440px) and (orientation: landscape) {
@@ -68,7 +68,7 @@
             top: calc(3.024em + 2vh); // circa nav.top + nav.height + 2vh
         }
         @media (min-height: 600px) and (orientation: landscape) {
-            right: calc(1.4rem + 1vw);
+            right: calc(1.4rem + 2.5vw);
         }
     }
 }

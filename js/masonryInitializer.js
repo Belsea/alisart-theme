@@ -1,6 +1,6 @@
 (function($) {
     var masonrySetup = {
-        gutter: ".gutter-sizer",
+        gutter: ".grid__gutter",
         itemSelector: ".grid__item",
         percentPosition: true
     };

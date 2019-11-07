@@ -56,7 +56,7 @@ get_header('index');
 
             echo '<div class="grid">';
 
-            echo '<div class="gutter-sizer"></div>';
+            echo '<div class="grid__gutter"></div>';
 
             while ($query->have_posts()) : $query->the_post();
 

@@ -1,0 +1,99 @@
+$gutterS: 5%;
+$gutterM: 3%;
+$gutterL: 2%;
+
+.grid__gutter {
+    width: 5%; // S
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        width: 3%; // M
+    }
+    @media (min-width: 1920px) and (orientation: landscape) {
+        width: 2%; // L
+    }
+}
+
+/* 
+ * I N D E X   S I Z E:
+ * 2 columns for portrait
+ * 3 columns for landscape and for portrait > 1024px wide
+ * 4 columns for landscape > 1920px wide
+ */
+.grid__item {
+    margin-bottom: 6%;
+    width: calc(#{100% - $gutterS} / 2);
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        margin-bottom: 3.7%;
+        // 100 - 2gutter
+        width: calc(#{100% - $gutterM * 2} / 3);
+    }
+    @media (min-width: 1920px) and (orientation: landscape) {
+        margin-bottom: 2.7%;
+        // 100 - 3gutter
+        width: calc(#{100% - $gutterL * 3} / 4);
+    }
+}
+
+/*
+ * S I N G L E   S I Z E:
+ * portrait ( S )
+ * landscape and portrait > 1024px wide ( M )
+ * landscape > 1920px wide ( L )
+ */
+
+// 1 COLUMN
+.grid__item.col-1of1--s {
+    width: 100%;
+}
+.grid__item.col-1of1--m {
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        width: 100%;
+    }
+}
+
+// 2 of 3 COLUMNS
+.grid__item.col-2of3--m {
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        width: calc(#{100% - $gutterM * 2} / 3 * 2 + #{$gutterM});
+    }
+}
+.grid__item.col-2of3--l {
+    @media (min-width: 1920px) and (orientation: landscape) {
+        width: calc(#{100% - $gutterL * 2} / 3 * 2 + #{$gutterL});
+    }
+}
+
+// 2 COLUMNS
+.grid__item.col-1of2--s {
+    width: calc(#{100% - $gutterS} / 2);
+}
+.grid__item.col-1of2--m {
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        width: calc(#{100% - $gutterM} / 2);
+        width: 46%;
+    }
+}
+.grid__item.col-1of2--l {
+    @media (min-width: 1920px) and (orientation: landscape) {
+        width: calc(#{100% - $gutterL} / 2);
+        width: 46%;
+    }
+}
+
+// 3 COLUMNS
+.grid__item.col-1of3--m {
+    @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
+        width: calc(#{100% - $gutterM * 2} / 3);
+    }
+}
+.grid__item.col-1of3--l {
+    @media (min-width: 1920px) and (orientation: landscape) {
+        width: calc(#{100% - $gutterL * 2} / 3);
+    }
+}
+
+// 4 COLUMNS
+.grid__item.col-1of4--l {
+    @media (min-width: 1920px) and (orientation: landscape) {
+        width: calc(#{100% - $gutterL * 3} / 4);
+    }
+}

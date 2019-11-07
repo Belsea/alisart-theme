@@ -27,7 +27,7 @@ if (have_posts()) :
         $next_post = get_next_post();
         ?>
 
-        <article class="main main--slim single ">
+        <article class="main main--slim single single--no-masonry">
 
             <header class="main__header text--right">
                 <form method="post" action="<?php echo esc_url(home_url()) ?>">
