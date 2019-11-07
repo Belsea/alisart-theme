@@ -1,4 +1,4 @@
-.grid__item {
+.index__main .grid__item {
     background-color: $primary-color;
     img {
         height: auto;
@@ -12,7 +12,7 @@
     }
 }
 
-.grid__item:hover {
+.index__main .grid__item:hover {
     // TRIGGER ALL HOVERS
     img {
         opacity: 0.4;

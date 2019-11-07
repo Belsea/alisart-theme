@@ -29,7 +29,7 @@ if (have_posts()) :
 
         <article class="main main--slim single single--no-masonry">
 
-            <header class="main__header text--right">
+            <header class="single__header text--right">
                 <form method="post" action="<?php echo esc_url(home_url()) ?>">
                     <input class="hidden" name="category" type="text" value="<?php echo $category->name; ?>">
                     <h2 class="single__category single__subheader m-0">
