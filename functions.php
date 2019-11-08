@@ -70,9 +70,7 @@ function alisart_theme_setup()
 		'footer__policies' => __('Footer Menu - Policies', 'alisart_theme')
 	));
 
-
 	add_theme_support('post-format', array('image', 'video'));
-
 
 	add_theme_support('post-thumbnails');
 
@@ -106,16 +104,8 @@ add_filter('image_size_names_choose', 'alisart_custom_sizes', 10, 1);
 
 
 
-
 // =================================================================================
 //   R E S P O N S I V E    I M A G E S
-/*
- * W A R N I N G : 
- * needs to be an empty paragraph at the end of the posts in Gutenberg,
- * at least in video posts, otherwise is seen as an empty string and gives error, 
- * since is searching for an HTML-ENTITIES 
- * THIS ERROR IS ONLY SHOWN IN EDITOR, NOT ON THE WEBSITE
- */
 function alisart_add_lazyload_class($content)
 {
 	$content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");

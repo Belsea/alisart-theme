@@ -3,12 +3,12 @@ $gutterM: 3%;
 $gutterL: 2%;
 
 .grid__gutter {
-    width: 5%; // S
+    width: $gutterS;
     @media (orientation: landscape), (min-width: 1024px) and (orientation: portrait) {
-        width: 3%; // M
+        width: $gutterM;
     }
     @media (min-width: 1920px) and (orientation: landscape) {
-        width: 2%; // L
+        width: $gutterL;
     }
 }
 
@@ -39,7 +39,6 @@ $gutterL: 2%;
  * landscape and portrait > 1024px wide ( M )
  * landscape > 1920px wide ( L )
  */
-
 // 1 COLUMN
 .grid__item.col-1of1--s {
     width: 100%;
