@@ -15,6 +15,7 @@
         }
         &:hover:before {
             opacity: 1;
+            width: 110%;
         }
     }
 }
@@ -28,9 +29,6 @@
             bottom: 18%;
             left: -4%;
             transform: rotate(3deg);
-        }
-        &:hover:before {
-            width: 110%;
         }
     }
     li.current-menu-item > a:before {

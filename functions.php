@@ -2,52 +2,35 @@
 
 // =================================================================================
 //   E N Q U E U I N G   S T Y L E S   &   S C R I P T S
-//
-# Always handle stylesheets and js through here, for safety and performance
 function alisart_theme_enqueue_scripts()
 {
-
 	//	S T Y L E S
-
-	# wp_register_style in init hook to later conditionally enqueue them, maybe based on page/post type
 	wp_enqueue_style('alisart_style', get_stylesheet_uri(), 'all');
-
 	wp_enqueue_style('font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css', '5.11.2', 'all');
 	wp_enqueue_style('font_awesome_brands', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css', '5.11.2', 'all');
-
 	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Oswald:200,300,400|Playfair+Display:400,700&display=swap', 'all');
 
 
 	//	S C R I P T S
-
 	# last bool TRUE to load scripts in the footer
 	wp_enqueue_script('navToggler', get_template_directory_uri() . '/js/navToggler.js', false, false, true);
-
-	wp_enqueue_script('sizesAdjustment', get_template_directory_uri() . '/js/sizesAdjustment.js', false, false, true);
-
+	wp_enqueue_script('uiTweaks', get_template_directory_uri() . '/js/uiTweaks.js', false, false, true);
 	wp_enqueue_script('bioSwitcher', get_template_directory_uri() . '/js/bioSwitcher.js', false, false, true);
 
+	wp_register_script('lazysizes', 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js', false, '4.1.5', true);
+	wp_enqueue_script('respimg', 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/plugins/respimg/ls.respimg.min.js', array('lazysizes'), '4.1.5', true);
 
 	# wp native versions need to be deregistered
 	wp_deregister_script('masonry');
 	wp_deregister_script('imagesLoaded');
 	# wp_register_script for those only needed as dependencies of some other script
 	wp_register_script('imagesLoaded', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js', array('jquery'), '4.1.4', true);
-	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('imagesLoaded'), '4.2.2', true);
-	
+	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('imagesLoaded'), '4.2.2', true);	
 	wp_enqueue_script('masonryInitializer', get_template_directory_uri() . '/js/masonryInitializer.js', array('jquery', 'masonry'), false, true);
-
-
 	if ( is_home() ) {
 		wp_enqueue_script('indexScrollAnimations', get_template_directory_uri() . '/js/indexScrollAnimations.js', false, false, true);
-
 		wp_enqueue_script('masonryFilterLoader', get_template_directory_uri() . '/js/masonryFilterLoader.js', array('jquery', 'masonry'), false, true);
 	}
-	
-
-	wp_register_script('lazysizes', 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js', false, '4.1.5', true);
-
-	wp_enqueue_script('respimg', 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/plugins/respimg/ls.respimg.min.js', array('lazysizes'), '4.1.5', true);
 }
 add_action('wp_enqueue_scripts', 'alisart_theme_enqueue_scripts');
 
@@ -59,7 +42,6 @@ add_action('wp_enqueue_scripts', 'alisart_theme_enqueue_scripts');
 function alisart_theme_setup()
 {
 	add_theme_support('menus');
-
 	register_nav_menus(array(
 		'index-header__pages' => __('Index Header Menu - Pages', 'alisart_theme'),
 		'index-header__socials' => __('Index Header Menu - Socials', 'alisart_theme'),
