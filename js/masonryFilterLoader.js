@@ -18,7 +18,7 @@
     for (var i = 0; i < $categoryLinks.length; i++) {
         var currentCategory;
 
-        if ($categoryLinks[i].parentNode.classList.contains("current-cat")) {
+        if ($categoryLinks[i].parentNode.classList.contains("current-menu-item")) {
             currentCategory = $categoryLinks[i].href;
 
             for (var i = 0; i < $navCategoryLinks.length; i++) {
@@ -51,14 +51,14 @@
         var thatHref = that.attr("href"),
             $categorySlug = thatHref.split("/")[4];
 
-        // remove wherever is the current-cat class
-        $categoryLinks.parent().removeClass("current-cat");
+        // remove wherever is the current-menu-item class
+        $categoryLinks.parent().removeClass("current-menu-item");
         // also remove wherever is the current-menu-item class in the side menu
         $navCategoryLinks.parent().removeClass("current-menu-item");
         // and animate the updating area
         $loopContainer.animate({ opacity: "0.5" });
         // then highlight the new current category who's about to load
-        that.parent().addClass("current-cat");
+        that.parent().addClass("current-menu-item");
         // and the current-menu-item in the side menu
         for (var i = 0; i < $navCategoryLinks.length; i++) {
             if ($navCategoryLinks[i].href == thatHref) {
@@ -118,16 +118,16 @@
 
         // remove wherever is the current-menu-item class
         $navCategoryLinks.parent().removeClass("current-menu-item");
-        // also remove wherever is the current-cat class in the page nav
-        $categoryLinks.parent().removeClass("current-cat");
+        // also remove wherever is the current-menu-item class in the page nav
+        $categoryLinks.parent().removeClass("current-menu-item");
         // and animate the updating area
         $loopContainer.animate({ opacity: "0.5" });
         // then highlight the new current category who's about to load
         that.parent().addClass("current-menu-item");
-        // and the new current-cat in the page nav
+        // and the new current-menu-item in the page nav
         for (var i = 0; i < $categoryLinks.length; i++) {
             if ($categoryLinks[i].href == thatHref) {
-                $categoryLinks[i].parentNode.classList.add("current-cat");
+                $categoryLinks[i].parentNode.classList.add("current-menu-item");
             }
         }
 
@@ -178,7 +178,7 @@
             $categorySlug = window.location.href.split("/")[4];
         } else {
             for (var i = 0; i < $categoryLinks.length; i++) {
-                if ($categoryLinks[i].parentNode.classList.contains("current-cat")) {
+                if ($categoryLinks[i].parentNode.classList.contains("current-menu-item")) {
                     var $href = $categoryLinks[i].href;
                     $categorySlug = $href.split("/")[4];
                 }

@@ -118,6 +118,19 @@ add_filter('the_content', 'alisart_add_lazyload_class');
 
 
 // =================================================================================
+//   C U S T O M   C L A S S   T O   C A T E G O R Y   L I S T
+# Added the same class as nav menus to more easily deal with current-cat in css and js files
+function current_menu_item_class ($classes, $item) {
+    if (in_array('current-cat', $classes)){
+        $classes[] = 'current-menu-item ';
+    }
+    return $classes;
+}
+add_filter('category_css_class' , 'current_menu_item_class' , 10 , 2);
+
+
+
+// =================================================================================
 //   C A T E G O R Y    F I L T E R
 function alisart_category_filter()
 {

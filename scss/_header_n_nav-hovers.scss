@@ -18,6 +18,10 @@
             width: 110%;
         }
     }
+    li.current-menu-item > a:before {
+        opacity: 1;
+        width: 110%;
+    }
 }
 
 .index-header__pages,
@@ -30,10 +34,6 @@
             left: -4%;
             transform: rotate(3deg);
         }
-    }
-    li.current-menu-item > a:before {
-        opacity: 1;
-        width: 110%;
     }
 }
 
@@ -72,9 +72,5 @@
 .index__categories {
     a:before {
         background: $gray--lighter2;
-    }
-    li.current-cat a:before {
-        opacity: 1;
-        width: 110%;
     }
 }
