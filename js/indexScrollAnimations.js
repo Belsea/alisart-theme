@@ -22,6 +22,7 @@
                 nav.classList.remove("show");
                 // also close the nav if open
                 if (nav.classList.contains("opened")) {
+                    nav.classList.remove("opened");
                     navInvolved.forEach((element) => {
                         element.classList.contains("opened") && element.classList.remove("opened");
                     });
